@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useSearchParams, useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 
 export default function Footer() {
     return (
@@ -39,11 +41,7 @@ export default function Footer() {
                     {/* Contact/Lang Column */}
                     <div className="md:col-span-1 flex flex-col items-end gap-4">
                         <a href="tel:+50223372540" className="text-white font-bold text-sm hover:text-primary transition-colors">+502 2337-2540</a>
-                        <div className="flex gap-4 text-xs">
-                            <span className="font-bold cursor-pointer">Español</span>
-                            <span className="text-gray-600">|</span>
-                            <span className="text-gray-400 cursor-pointer hover:text-white transition-colors">English</span>
-                        </div>
+                        <LanguageSelector />
                     </div>
                 </div>
 
@@ -61,5 +59,62 @@ export default function Footer() {
                 </div>
             </div>
         </footer>
+    );
+}
+
+function LanguageSelector() {
+    const searchParams = useSearchParams();
+    const router = useRouter();
+    const [lang, setLangState] = useState<string>("es");
+
+    useEffect(() => {
+        const queryLang = searchParams.get("lang");
+        if (queryLang) {
+            setLangState(queryLang);
+        } else {
+            // Check cookie
+            const cookieLang = document.cookie
+                .split("; ")
+                .find((row) => row.startsWith("lang="))
+                ?.split("=")[1];
+            if (cookieLang) {
+                setLangState(cookieLang);
+            }
+        }
+    }, [searchParams]);
+
+    const setLanguage = (newLang: string) => {
+        // Set cookie for persistence
+        document.cookie = `lang=${newLang}; path=/; max-age=${60 * 60 * 24 * 30}`;
+
+        const params = new URLSearchParams(searchParams.toString());
+        if (newLang === "es") {
+            params.delete("lang");
+        } else {
+            params.set("lang", newLang);
+        }
+
+        // Use window.location.href for a full refresh
+        window.location.href = `?${params.toString()}`;
+    };
+
+    return (
+        <div className="flex gap-4 text-xs">
+            <span
+                onClick={() => setLanguage("es")}
+                className={`cursor-pointer transition-colors ${lang === "es" ? "text-white font-bold" : "text-gray-400 hover:text-white"
+                    }`}
+            >
+                Español
+            </span>
+            <span className="text-gray-600">|</span>
+            <span
+                onClick={() => setLanguage("en")}
+                className={`cursor-pointer transition-colors ${lang === "en" ? "text-white font-bold" : "text-gray-400 hover:text-white"
+                    }`}
+            >
+                English
+            </span>
+        </div>
     );
 }

@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 
 export default function Header() {
     const pathname = usePathname();
@@ -70,11 +71,7 @@ export default function Header() {
                     <div className="h-12 w-[1px] bg-gray-100/80"></div>
 
                     {/* Language Selector */}
-                    <div className="flex items-center gap-6 text-[14px]">
-                        <span className="text-primary font-bold cursor-pointer relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary">Español</span>
-                        <span className="text-gray-200 font-light">|</span>
-                        <span className="text-gray-400 font-medium cursor-pointer hover:text-primary transition-colors">English</span>
-                    </div>
+                    <LanguageSelector />
                 </div>
             </div>
 
@@ -102,5 +99,67 @@ export default function Header() {
                 </div>
             </div>
         </header>
+    );
+}
+
+function LanguageSelector() {
+    const searchParams = useSearchParams();
+    const router = useRouter();
+    const [lang, setLangState] = useState<string>("es");
+
+    useEffect(() => {
+        const queryLang = searchParams.get("lang");
+        if (queryLang) {
+            setLangState(queryLang);
+        } else {
+            // Check cookie for persistence
+            const cookieLang = document.cookie
+                .split("; ")
+                .find((row) => row.startsWith("lang="))
+                ?.split("=")[1];
+            if (cookieLang) {
+                setLangState(cookieLang);
+            }
+        }
+    }, [searchParams]);
+
+    const setLanguage = (newLang: string) => {
+        // Set cookie for persistence
+        document.cookie = `lang=${newLang}; path=/; max-age=${60 * 60 * 24 * 30}`;
+
+        const params = new URLSearchParams(searchParams.toString());
+        if (newLang === "es") {
+            params.delete("lang");
+        } else {
+            params.set("lang", newLang);
+        }
+
+        // Use window.location.href for a full refresh to ensure the server 
+        // receives the updated cookie in the headers.
+        window.location.href = `?${params.toString()}`;
+    };
+
+    return (
+        <div className="flex items-center gap-6 text-[14px]">
+            <span
+                onClick={() => setLanguage("es")}
+                className={`cursor-pointer transition-all ${lang === "es"
+                    ? "text-primary font-bold relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
+                    : "text-gray-400 font-medium hover:text-primary"
+                    }`}
+            >
+                Español
+            </span>
+            <span className="text-gray-200 font-light">|</span>
+            <span
+                onClick={() => setLanguage("en")}
+                className={`cursor-pointer transition-all ${lang === "en"
+                    ? "text-primary font-bold relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-primary"
+                    : "text-gray-400 font-medium hover:text-primary"
+                    }`}
+            >
+                English
+            </span>
+        </div>
     );
 }
