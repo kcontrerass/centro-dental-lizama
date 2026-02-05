@@ -11,11 +11,11 @@ export default function Header() {
     const navItems = [
         { name: "Home", href: "/" },
         { name: "Quiénes Somos", href: "/quienes-somos" },
-        { name: "Servicios", href: "#" },
-        { name: "Testimoniales", href: "#" },
-        { name: "Ubicación", href: "#" },
-        { name: "Blog", href: "#" },
-        { name: "Contacto", href: "#" },
+        { name: "Servicios", href: "/servicios" },
+        { name: "Testimoniales", href: "/testimoniales" },
+        { name: "Ubicación", href: "/ubicacion" },
+        { name: "Blog", href: "/blog" },
+        { name: "Contacto", href: "/contacto" },
     ];
 
     return (

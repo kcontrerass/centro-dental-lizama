@@ -27,9 +27,12 @@ export default function Footer() {
                     <div className="md:col-span-1">
                         <ul className="space-y-2 text-sm text-gray-400">
                             <li><Link href="/" className="hover:text-white transition-colors">Inicio</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Quiénes somos</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Blog</Link></li>
-                            <li><Link href="#" className="hover:text-white transition-colors">Contacto</Link></li>
+                            <li><Link href="/quienes-somos" className="hover:text-white transition-colors">Quiénes somos</Link></li>
+                            <li><Link href="/testimoniales" className="hover:text-white transition-colors">Testimoniales</Link></li>
+                            <li><Link href="/servicios" className="hover:text-white transition-colors">Servicios</Link></li>
+                            <li><Link href="/ubicacion" className="hover:text-white transition-colors">Ubicación</Link></li>
+                            <li><Link href="/blog" className="hover:text-white transition-colors">Blog</Link></li>
+                            <li><Link href="/contacto" className="hover:text-white transition-colors">Contacto</Link></li>
                         </ul>
                     </div>
 
@@ -52,8 +55,7 @@ export default function Footer() {
                         <span>By</span>
                         {/* Minimalist logo placeholder for the agency */}
                         <div className="flex items-center gap-1 font-bold text-white">
-                            <span className="text-primary text-sm">A</span>
-                            <span>aumento</span>
+
                         </div>
                     </div>
                 </div>
