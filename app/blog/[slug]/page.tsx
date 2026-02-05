@@ -1,6 +1,3 @@
-"use client";
-
-import { useParams } from "next/navigation";
 import Header from "../../components/layout/Header";
 import Footer from "../../components/layout/Footer";
 import Contact from "../../components/home/Contact";
@@ -39,9 +36,13 @@ export async function generateStaticParams() {
     }));
 }
 
-export default function BlogPostPage() {
-    const params = useParams();
-    const post = blogPosts.find(p => p.slug === params.slug);
+type Props = {
+    params: Promise<{ slug: string }>;
+};
+
+export default async function BlogPostPage({ params }: Props) {
+    const { slug } = await params;
+    const post = blogPosts.find(p => p.slug === slug);
 
     if (!post) {
         return <div>Post not found</div>;
