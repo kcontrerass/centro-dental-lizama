@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 
 export default function Footer() {
     return (
@@ -44,7 +44,9 @@ export default function Footer() {
                     {/* Contact/Lang Column */}
                     <div className="md:col-span-1 flex flex-col items-end gap-4">
                         <a href="tel:+50223372540" className="text-white font-bold text-sm hover:text-primary transition-colors">+502 2337-2540</a>
-                        <LanguageSelector />
+                        <Suspense fallback={<div className="text-xs text-gray-500">...</div>}>
+                            <LanguageSelector />
+                        </Suspense>
                     </div>
                 </div>
 

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 
 export default function Header() {
     const pathname = usePathname();
@@ -71,7 +71,9 @@ export default function Header() {
                     <div className="h-12 w-[1px] bg-gray-100/80"></div>
 
                     {/* Language Selector */}
-                    <LanguageSelector />
+                    <Suspense fallback={<div className="text-[13px] text-gray-400">Cargando...</div>}>
+                        <LanguageSelector />
+                    </Suspense>
                 </div>
             </div>
 

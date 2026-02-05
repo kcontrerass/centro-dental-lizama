@@ -33,6 +33,12 @@ const blogPosts = [
     }
 ];
 
+export async function generateStaticParams() {
+    return blogPosts.map((post) => ({
+        slug: post.slug,
+    }));
+}
+
 export default function BlogPostPage() {
     const params = useParams();
     const post = blogPosts.find(p => p.slug === params.slug);
