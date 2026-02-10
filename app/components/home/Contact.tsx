@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useMemo } from "react";
 
 interface ContactProps {
-    data: WordPressPage | null;
+    data?: WordPressPage | null;
 }
 
-export default function Contact({ data }: ContactProps) {
+export default function Contact({ data = null }: ContactProps) {
     const contactData = useMemo(() => {
         if (!data || !data.sections) return null;
 
