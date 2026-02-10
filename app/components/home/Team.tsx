@@ -1,17 +1,54 @@
 "use client";
 
+import { WordPressPage } from "@/lib/wordpress";
 import Image from "next/image";
+import { useMemo } from "react";
 
-export default function Team() {
+interface TeamProps {
+    data: WordPressPage | null;
+}
+
+export default function Team({ data }: TeamProps) {
+    const teamData = useMemo(() => {
+        if (!data || !data.sections) return null;
+
+        const columnsSection = data.sections.find(s => s.type === "columns");
+        if (!columnsSection || !columnsSection.columns) return null;
+
+        const imageCol = columnsSection.columns[0];
+        const textCol = columnsSection.columns[1];
+
+        const image = imageCol?.blocks?.find((b: any) => b.type === "core/image")?.url;
+        const paragraphs = textCol?.blocks?.filter((b: any) => b.type === "core/paragraph").map((b: any) => b.content) || [];
+
+        return {
+            image: image || "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2070&auto=format&fit=crop",
+            tag: paragraphs[0] || "Lorem ipsum",
+            title: paragraphs[1] || "Conoce a nuestro equipo",
+            subtitle: paragraphs[2] || "Lorem Ipsum is simply dummy text of the printing",
+            memberTitle: paragraphs[3] || "Dra. Ricardo Alvarado",
+            memberDesc: paragraphs[4] || "Somos un centro dental con calidad humana, entregados al servicio íntegro de cada uno de nuestros pacientes."
+        };
+    }, [data]);
+
+    const info = teamData || {
+        image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2070&auto=format&fit=crop",
+        tag: "Lorem ipsum",
+        title: "Conoce a nuestro equipo",
+        subtitle: "Lorem Ipsum is simply dummy text of the printing",
+        memberTitle: "Dra. Ricardo Alvarado",
+        memberDesc: "Somos un centro dental con calidad humana, entregados al servicio íntegro de cada uno de nuestros pacientes."
+    };
+
     return (
-        <section className="py-24 bg-white overflow-hidden">
+        <section className="py-24 bg-white overflow-hidden" id="equipo">
             <div className="container-custom">
                 <div className="flex flex-col md:flex-row items-center gap-20">
                     {/* Left Side: Team Image */}
                     <div className="md:w-1/2 relative">
                         <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-sm">
                             <Image
-                                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2070&auto=format&fit=crop"
+                                src={info.image}
                                 alt="Dental Team"
                                 fill
                                 className="object-cover"
@@ -21,18 +58,18 @@ export default function Team() {
 
                     {/* Right Side: Content */}
                     <div className="md:w-1/2 text-left">
-                        <span className="text-gray-400 font-bold uppercase tracking-tight text-[13px] mb-2 block">Lorem ipsum</span>
+                        <span className="text-gray-400 font-bold uppercase tracking-tight text-[13px] mb-2 block">{info.tag}</span>
                         <h2 className="text-[44px] font-bold text-gray-900 mb-4 leading-tight">
-                            Conoce a nuestro equipo
+                            {info.title}
                         </h2>
                         <p className="text-gray-400 text-[14px] mb-12 leading-relaxed">
-                            Lorem Ipsum is simply dummy text of the printing
+                            {info.subtitle}
                         </p>
 
                         <div className="space-y-4 max-w-md border-t pt-10">
-                            <h4 className="font-bold text-gray-800 text-[18px]">Dra. Ricardo Alvarado</h4>
+                            <h4 className="font-bold text-gray-800 text-[18px]">{info.memberTitle}</h4>
                             <p className="text-gray-400 leading-relaxed text-[13px] font-light">
-                                Somos un centro dental con calidad humana, entregados al servicio íntegro de cada uno de nuestros pacientes.
+                                {info.memberDesc}
                             </p>
                         </div>
                     </div>

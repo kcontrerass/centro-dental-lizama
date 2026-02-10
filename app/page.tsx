@@ -26,10 +26,10 @@ export default async function Home({
       <Header />
       <main>
         <Hero key={lang} data={homeData} />
-        <Specialties />
-        <Services />
-        <Team />
-        <Contact />
+        <Specialties data={homeData} />
+        <Services data={homeData} />
+        <Team data={homeData} />
+        <Contact data={homeData} />
       </main>
       <Footer />
     </div>

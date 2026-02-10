@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "centrodentallizamabackend.aumenta.do",
       },
+      {
+        protocol: "http",
+        hostname: "centrodentallizamabackend.aumenta.do",
+      },
     ],
   },
 };
