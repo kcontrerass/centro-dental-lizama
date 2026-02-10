@@ -188,6 +188,7 @@ export default function Specialties({ data }: SpecialtiesProps) {
     const sectionSubtitle = specialtiesData?.subtitle || "";
     const buttonText = specialtiesData?.buttonText || "Ver todas";
 
+
     // Split title for styling (First word color 1, rest color 2)
     const titleParts = sectionTitle.trim().split(" ");
     const firstWord = titleParts[0];
