@@ -36,12 +36,30 @@ export async function generateStaticParams() {
     }));
 }
 
+import { getHeaderData, getFooterData } from "@/lib/wordpress";
+import { cookies } from "next/headers";
+
+// ... blogPosts and generateStaticParams remain unchanged ...
+
 type Props = {
     params: Promise<{ slug: string }>;
+    searchParams: Promise<{ lang?: string }>;
 };
 
-export default async function BlogPostPage({ params }: Props) {
+export default async function BlogPostPage({ params, searchParams }: Props) {
     const { slug } = await params;
+    const { lang: langParam } = await searchParams;
+    const cookieStore = await cookies();
+    const langCookie = cookieStore.get("lang")?.value;
+
+    const lang = langParam || langCookie || "es";
+    const language = lang === "en" ? "ingles" : "espanol";
+
+    const [headerData, footerData] = await Promise.all([
+        getHeaderData(language),
+        getFooterData(language)
+    ]);
+
     const post = blogPosts.find(p => p.slug === slug);
 
     if (!post) {
@@ -50,7 +68,8 @@ export default async function BlogPostPage({ params }: Props) {
 
     return (
         <main className="min-h-screen bg-white">
-            <Header />
+            <Header data={headerData} />
+            {/* ... rest of the component remains unchanged ... */}
 
             <section className="pt-32 pb-20 px-8">
                 <div className="max-w-[800px] mx-auto">
@@ -79,7 +98,7 @@ export default async function BlogPostPage({ params }: Props) {
             </section>
 
             <Contact />
-            <Footer />
+            <Footer data={footerData} />
         </main>
     );
 }

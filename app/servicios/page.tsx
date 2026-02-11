@@ -5,15 +5,34 @@ import ServicesIntro from "../components/services/ServicesIntro";
 import ServicesGrid from "../components/services/ServicesGrid";
 import SecondaryServices from "../components/services/SecondaryServices";
 
-export default function ServiciosPage() {
+import { getHeaderData, getFooterData } from "@/lib/wordpress";
+import { cookies } from "next/headers";
+
+export default async function ServiciosPage({
+    searchParams,
+}: {
+    searchParams: Promise<{ lang?: string }>;
+}) {
+    const { lang: langParam } = await searchParams;
+    const cookieStore = await cookies();
+    const langCookie = cookieStore.get("lang")?.value;
+
+    const lang = langParam || langCookie || "es";
+    const language = lang === "en" ? "ingles" : "espanol";
+
+    const [headerData, footerData] = await Promise.all([
+        getHeaderData(language),
+        getFooterData(language)
+    ]);
+
     return (
         <main className="min-h-screen bg-white">
-            <Header />
+            <Header data={headerData} />
             <ServicesHero />
             <ServicesIntro />
             <ServicesGrid />
             <SecondaryServices />
-            <Footer />
+            <Footer data={footerData} />
         </main>
     );
 }

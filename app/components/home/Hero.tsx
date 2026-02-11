@@ -103,14 +103,7 @@ export default function Hero({ data }: HeroProps) {
             )}
 
             {/* WhatsApp Button Floating */}
-            <a
-                href="https://wa.me/50222372540"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="absolute bottom-8 right-8 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform z-30"
-            >
-                <MessageCircle size={40} className="fill-white" />
-            </a>
+
         </section>
     );
 }

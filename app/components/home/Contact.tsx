@@ -143,11 +143,11 @@ export default function Contact({ data = null }: ContactProps) {
                                         ))
                                     ) : (
                                         <>
-                                            <a href="#" className="p-3 rounded-full hover:scale-110 transition-transform">
-                                                <Image src="/Grupo 17.svg" alt="Social Icon 17" width={24} height={24} />
+                                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full text-[#3ea99e] hover:bg-[#94D4BB]/20 transition-all hover:scale-110">
+                                                <Instagram size={24} />
                                             </a>
-                                            <a href="#" className="p-3 rounded-full hover:scale-110 transition-transform">
-                                                <Image src="/Grupo 25.svg" alt="Social Icon 25" width={24} height={24} />
+                                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full text-[#3ea99e] hover:bg-[#94D4BB]/20 transition-all hover:scale-110">
+                                                <Facebook size={24} />
                                             </a>
                                         </>
                                     )}
@@ -157,7 +157,7 @@ export default function Contact({ data = null }: ContactProps) {
                     </div>
 
                     {/* Right Side: Contact Form */}
-                    <div className="md:w-1/2 w-full p-8 md:p-12 ">
+                    <div className="md:w-1/2 w-full px-8 md:p-12 ">
                         <form className="space-y-5">
                             <div>
                                 <input

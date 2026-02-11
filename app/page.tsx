@@ -5,7 +5,7 @@ import Specialties from "./components/home/Specialties";
 import Services from "./components/home/Services";
 import Team from "./components/home/Team";
 import Contact from "./components/home/Contact";
-import { getHomeData } from "@/lib/wordpress";
+import { getHomeData, getHeaderData, getFooterData } from "@/lib/wordpress";
 import { cookies } from "next/headers";
 
 export default async function Home({
@@ -19,11 +19,16 @@ export default async function Home({
 
   const lang = langParam || langCookie || "es";
   const language = lang === "en" ? "ingles" : "espanol";
-  const homeData = await getHomeData(language);
+
+  const [homeData, headerData, footerData] = await Promise.all([
+    getHomeData(language),
+    getHeaderData(language),
+    getFooterData(language)
+  ]);
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <Header data={headerData} />
       <main>
         <Hero key={lang} data={homeData} />
         <Specialties data={homeData} />
@@ -31,7 +36,7 @@ export default async function Home({
         <Team data={homeData} />
         <Contact data={homeData} />
       </main>
-      <Footer />
+      <Footer data={footerData} />
     </div>
   );
 }

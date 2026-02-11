@@ -4,14 +4,33 @@ import TestimonialsHero from "../components/testimonials/TestimonialsHero";
 import TestimonialsCases from "../components/testimonials/TestimonialsCases";
 import Contact from "../components/home/Contact";
 
-export default function TestimonialesPage() {
+import { getHeaderData, getFooterData } from "@/lib/wordpress";
+import { cookies } from "next/headers";
+
+export default async function TestimonialesPage({
+    searchParams,
+}: {
+    searchParams: Promise<{ lang?: string }>;
+}) {
+    const { lang: langParam } = await searchParams;
+    const cookieStore = await cookies();
+    const langCookie = cookieStore.get("lang")?.value;
+
+    const lang = langParam || langCookie || "es";
+    const language = lang === "en" ? "ingles" : "espanol";
+
+    const [headerData, footerData] = await Promise.all([
+        getHeaderData(language),
+        getFooterData(language)
+    ]);
+
     return (
         <main className="min-h-screen bg-white">
-            <Header />
+            <Header data={headerData} />
             <TestimonialsHero />
             <TestimonialsCases />
             <Contact />
-            <Footer />
+            <Footer data={footerData} />
         </main>
     );
 }
