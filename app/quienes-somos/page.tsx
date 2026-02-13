@@ -29,9 +29,9 @@ export default async function QuienesSomosPage({
         <main className="min-h-screen bg-white">
             <Header data={headerData} />
             <AboutHero data={aboutData} />
-            <AboutStats />
-            <AboutMain />
-            <AboutTeamSlider />
+            <AboutStats data={aboutData} />
+            <AboutMain data={aboutData} />
+            <AboutTeamSlider data={aboutData} />
             <Footer data={footerData} />
         </main>
     );

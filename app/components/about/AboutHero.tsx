@@ -20,8 +20,12 @@ export default function AboutHero({ data }: AboutHeroProps) {
         : "Con más de 30 años de experiencia en Guatemala, contando con especialistas en todas las ramas de la odontología";
 
     if (data && data.gutenberg_structure) {
-        // Find the banner image
-        const imageBlock = data.gutenberg_structure.find(b => b.type === "core/image" || (b.type === "core/group" && b.blocks?.some(sb => sb.type === "core/image")));
+        // Find the banner image - look top level or inside first group
+        const imageBlock = data.gutenberg_structure.find(b =>
+            b.type === "core/image" ||
+            (b.type === "core/group" && b.blocks?.some(sb => sb.type === "core/image"))
+        );
+
         if (imageBlock) {
             if (imageBlock.type === "core/image" && imageBlock.url) {
                 bannerUrl = imageBlock.url;
@@ -33,13 +37,25 @@ export default function AboutHero({ data }: AboutHeroProps) {
             }
         }
 
-        // Find paragraphs for title and description
-        const paragraphBlocks = data.gutenberg_structure.filter(b => b.type === "core/paragraph");
-        if (paragraphBlocks.length > 0) {
-            title = paragraphBlocks[0].content || title;
-            if (paragraphBlocks.length > 1) {
-                description = paragraphBlocks[1].content || description;
+        // Collect all paragraphs recursively (top level + one level deep groups)
+        const allParagraphs: any[] = [];
+        data.gutenberg_structure.forEach(block => {
+            if (block.type === "core/paragraph") {
+                allParagraphs.push(block);
+            } else if (block.blocks) {
+                block.blocks.forEach(inner => {
+                    if (inner.type === "core/paragraph") {
+                        allParagraphs.push(inner);
+                    }
+                });
             }
+        });
+
+        if (allParagraphs.length >= 2) {
+            title = allParagraphs[0].content || title;
+            description = allParagraphs[1].content || description;
+        } else if (allParagraphs.length === 1) {
+            title = allParagraphs[0].content || title;
         }
     }
 
