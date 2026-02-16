@@ -4,7 +4,7 @@ import AppointmentHero from "../components/appointment/AppointmentHero";
 import AppointmentInfo from "../components/appointment/AppointmentInfo";
 import AppointmentForm from "../components/appointment/AppointmentForm";
 
-import { getHeaderData, getFooterData } from "@/lib/wordpress";
+import { getHeaderData, getFooterData, getAppointmentData } from "@/lib/wordpress";
 import { cookies } from "next/headers";
 
 export default async function AgendarServicioPage({
@@ -19,17 +19,18 @@ export default async function AgendarServicioPage({
     const lang = langParam || langCookie || "es";
     const language = lang === "en" ? "ingles" : "espanol";
 
-    const [headerData, footerData] = await Promise.all([
+    const [headerData, footerData, appointmentData] = await Promise.all([
         getHeaderData(language),
-        getFooterData(language)
+        getFooterData(language),
+        getAppointmentData(language)
     ]);
 
     return (
         <main className="min-h-screen bg-white">
             <Header data={headerData} />
-            <AppointmentHero />
-            <AppointmentInfo />
-            <AppointmentForm />
+            <AppointmentHero data={appointmentData} />
+            <AppointmentInfo data={appointmentData} />
+            <AppointmentForm data={appointmentData} language={language === "ingles" ? "ingles" : "espanol"} />
             <Footer data={footerData} />
         </main>
     );

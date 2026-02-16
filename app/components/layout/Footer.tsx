@@ -90,8 +90,8 @@ export default function Footer({ data }: FooterProps) {
 
     return (
         <footer className="bg-black text-white pt-16 pb-6">
-            <div className="container-custom">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 items-start">
+            <div className="px-20">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16 items-start">
                     {/* Logo Column */}
                     <div className="md:col-span-1">
                         <Link href="/" className="flex items-center gap-2">
@@ -125,10 +125,13 @@ export default function Footer({ data }: FooterProps) {
                     </div>
 
                     {/* Contact/Lang Column */}
-                    <div className="md:col-span-1 flex flex-col items-end gap-4">
+                    <div className="text-center">
                         <Link href={phoneUrl} className="text-white font-bold text-sm hover:text-primary transition-colors">
                             {phoneNumber}
                         </Link>
+                    </div>
+                    <div className="md:col-span-1 flex flex-col items-end gap-4">
+
                         <Suspense fallback={<div className="text-xs text-gray-500">...</div>}>
                             <LanguageSelector />
                         </Suspense>

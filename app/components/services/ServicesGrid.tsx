@@ -1,6 +1,18 @@
-"use client";
+import { WordPressPage, GutenbergBlock } from "@/lib/wordpress";
+import Image from "next/image";
 
-const primaryServices = [
+interface ServicesGridProps {
+    data: WordPressPage | null;
+}
+
+interface Service {
+    title: string;
+    description: string;
+    icon?: React.ReactNode;
+    iconUrl?: string;
+}
+
+const fallbackServices: Service[] = [
     {
         title: "Diseño de sonrisa",
         description: "Mejoramos tu sonrisa con carillas, coronas y cirugía periodontal.",
@@ -40,17 +52,46 @@ const primaryServices = [
     }
 ];
 
-export default function ServicesGrid() {
+export default function ServicesGrid({ data }: ServicesGridProps) {
+    let services = fallbackServices;
+
+    if (data && data.gutenberg_structure) {
+        const columnsBlock = data.gutenberg_structure.find(block => block.type === "core/columns");
+        if (columnsBlock && columnsBlock.columns) {
+            const extractedServices = columnsBlock.columns.map((col: any) => {
+                const group = col.blocks?.find((b: any) => b.type === "core/group");
+                if (group && group.blocks) {
+                    const imageBlock = group.blocks.find((b: any) => b.type === "core/image");
+                    const paragraphs = group.blocks.filter((b: any) => b.type === "core/paragraph");
+                    return {
+                        title: paragraphs[0]?.content || "",
+                        description: paragraphs[1]?.content || "",
+                        iconUrl: imageBlock?.attributes?.url || imageBlock?.url
+                    };
+                }
+                return null;
+            }).filter(Boolean);
+
+            if (extractedServices.length > 0) {
+                services = extractedServices as any;
+            }
+        }
+    }
+
     return (
         <section className="pb-20 pt-0 px-8 bg-white">
             <div className="max-w-[1200px] mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    {primaryServices.map((service, index) => (
+                    {services.map((service, index) => (
                         <div key={index} className="flex flex-col items-center text-center">
-                            <div className="w-28 h-28 bg-[#f4fbfc] rounded-full flex items-center justify-center mb-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)]">
-                                {service.icon}
+                            <div className="w-28 h-28 bg-[#f4fbfc] rounded-full flex items-center justify-center mb-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] uppercase">
+                                {service.iconUrl ? (
+                                    <Image src={service.iconUrl} alt={service.title} width={55} height={55} className="w-[55px] h-[55px] object-contain" />
+                                ) : (
+                                    (service as any).icon
+                                )}
                             </div>
-                            <h3 className="text-[22px] font-bold text-[#70bfa8] mb-4">
+                            <h3 className="text-[22px] font-bold text-[#70bfa8] mb-4 uppercase">
                                 {service.title}
                             </h3>
                             <p className="text-gray-400 text-[15px] leading-relaxed max-w-[280px] font-light">

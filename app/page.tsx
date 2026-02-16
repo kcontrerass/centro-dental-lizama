@@ -34,7 +34,7 @@ export default async function Home({
         <Specialties data={homeData} />
         <Services data={homeData} />
         <Team data={homeData} />
-        <Contact data={homeData} />
+        <Contact data={homeData} language={language === "ingles" ? "ingles" : "espanol"} />
       </main>
       <Footer data={footerData} />
     </div>

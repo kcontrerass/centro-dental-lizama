@@ -65,6 +65,44 @@ export async function getAboutData(language: "espanol" | "ingles" = "espanol"): 
     }
 }
 
+export async function getServicesData(language: "espanol" | "ingles" = "espanol"): Promise<WordPressPage | null> {
+    const url = `${API_URL}/pages/${language}/servicios`;
+    console.log(`[WordPress API] Fetching services data for ${language} from: ${url}`);
+    try {
+        const response = await fetch(url, {
+            next: { revalidate: 0 } // Disable cache for testing
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch services data for ${language}: ${response.statusText}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error(`Error fetching services data for ${language}:`, error);
+        return null;
+    }
+}
+
+export async function getAppointmentData(language: "espanol" | "ingles" = "espanol"): Promise<WordPressPage | null> {
+    const url = `${API_URL}/pages/${language}/agendar-cita`;
+    console.log(`[WordPress API] Fetching appointment data for ${language} from: ${url}`);
+    try {
+        const response = await fetch(url, {
+            next: { revalidate: 0 } // Disable cache for testing
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch appointment data for ${language}: ${response.statusText}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error(`Error fetching appointment data for ${language}:`, error);
+        return null;
+    }
+}
+
 export async function getHeaderData(language: "espanol" | "ingles" = "espanol"): Promise<WordPressPage | null> {
     const url = `${API_URL}/pages/${language}/menu`;
     console.log(`[WordPress API] Fetching header data for ${language} from: ${url}`);

@@ -1,7 +1,32 @@
-"use client";
 
+interface ContactFormMapProps {
+    language?: "espanol" | "ingles";
+}
 
-export default function ContactFormMap() {
+export default function ContactFormMap({ language = "espanol" }: ContactFormMapProps) {
+    const translations = {
+        espanol: {
+            name: "Nombre",
+            email: "Correo",
+            interest: "Qué tipo de producto le interesa",
+            implants: "Implantes",
+            orthodontics: "Ortodoncia",
+            phone: "Teléfono",
+            submit: "Enviar"
+        },
+        ingles: {
+            name: "Name",
+            email: "Email",
+            interest: "What type of product interests you",
+            implants: "Implants",
+            orthodontics: "Orthodontics",
+            phone: "Phone",
+            submit: "Send"
+        }
+    };
+
+    const t = translations[language];
+
     return (
         <section className="py-20 bg-white">
             <div className="max-w-[1200px] mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-16">
@@ -10,29 +35,32 @@ export default function ContactFormMap() {
                     <form className="space-y-4">
                         <input
                             type="text"
-                            placeholder="Nombre"
+                            placeholder={t.name}
+                            required
                             className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:border-[#4fb0a2] transition-colors"
                         />
                         <input
                             type="email"
-                            placeholder="Correo"
+                            placeholder={t.email}
+                            required
                             className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:border-[#4fb0a2] transition-colors"
                         />
-                        <select className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:border-[#4fb0a2] transition-colors bg-white appearance-none text-gray-400">
-                            <option value="">Qué tipo de producto le interesa</option>
-                            <option value="implantes">Implantes</option>
-                            <option value="ortodoncia">Ortodoncia</option>
+                        <select required className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:border-[#4fb0a2] transition-colors bg-white appearance-none text-gray-400">
+                            <option value="">{t.interest}</option>
+                            <option value="implantes">{t.implants}</option>
+                            <option value="ortodoncia">{t.orthodontics}</option>
                         </select>
                         <input
                             type="tel"
-                            placeholder="Teléfono"
+                            placeholder={t.phone}
+                            required
                             className="w-full px-6 py-4 rounded-full border border-gray-200 focus:outline-none focus:border-[#4fb0a2] transition-colors"
                         />
                         <button
                             type="submit"
                             className="px-12 py-3 bg-[#4fb0a2] text-white rounded-full font-bold hover:brightness-105 transition-all"
                         >
-                            Enviar
+                            {t.submit}
                         </button>
                     </form>
                 </div>

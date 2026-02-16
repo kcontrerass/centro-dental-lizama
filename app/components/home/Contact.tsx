@@ -5,9 +5,10 @@ import { useMemo } from "react";
 
 interface ContactProps {
     data?: WordPressPage | null;
+    language?: "espanol" | "ingles";
 }
 
-export default function Contact({ data = null }: ContactProps) {
+export default function Contact({ data = null, language = "espanol" }: ContactProps) {
     const contactData = useMemo(() => {
         if (!data || !data.sections) return null;
 
@@ -162,32 +163,36 @@ export default function Contact({ data = null }: ContactProps) {
                             <div>
                                 <input
                                     type="text"
-                                    placeholder={isEnglish ? "Name" : "Nombre"}
+                                    placeholder={language === "ingles" ? "Name" : "Nombre"}
+                                    required
                                     className="w-full px-8 py-4 rounded-full bg-transparent border border-black focus:outline-none focus:ring-2 focus:ring-primary/20 text-[14px] text-gray-600 placeholder:text-black shadow-inner"
                                 />
                             </div>
                             <div>
                                 <input
                                     type="email"
-                                    placeholder={isEnglish ? "Email" : "Correo"}
+                                    placeholder={language === "ingles" ? "Email" : "Correo"}
+                                    required
                                     className="w-full px-8 py-4 rounded-full bg-transparent border border-black focus:outline-none focus:ring-2 focus:ring-primary/20 text-[14px] text-gray-600 placeholder:text-black shadow-inner"
                                 />
                             </div>
                             <div>
                                 <select
+                                    required
                                     className="w-full px-8 py-4 rounded-full bg-transparent border border-black focus:outline-none focus:ring-2 focus:ring-primary/20 text-[14px] text-black shadow-inner appearance-none"
                                 >
-                                    <option className="text-black">{isEnglish ? "What type of product are you interested in?" : "Qué tipo de producto le interesa"}</option>
-                                    <option value="smile">{isEnglish ? "Smile Design" : "Diseño de Sonrisa"}</option>
-                                    <option value="implants">{isEnglish ? "Dental Implants" : "Implantes Dentales"}</option>
-                                    <option value="ortho">{isEnglish ? "Orthodontics" : "Ortodoncia"}</option>
-                                    <option value="kids">{isEnglish ? "Children's Dentistry" : "Odontología Niños"}</option>
+                                    <option value="" className="text-black">{language === "ingles" ? "What type of product are you interested in?" : "Qué tipo de producto le interesa"}</option>
+                                    <option value="smile">{language === "ingles" ? "Smile Design" : "Diseño de Sonrisa"}</option>
+                                    <option value="implants">{language === "ingles" ? "Dental Implants" : "Implantes Dentales"}</option>
+                                    <option value="ortho">{language === "ingles" ? "Orthodontics" : "Ortodoncia"}</option>
+                                    <option value="kids">{language === "ingles" ? "Children's Dentistry" : "Odontología Niños"}</option>
                                 </select>
                             </div>
                             <div>
                                 <input
                                     type="tel"
-                                    placeholder={isEnglish ? "Phone" : "Teléfono"}
+                                    placeholder={language === "ingles" ? "Phone" : "Teléfono"}
+                                    required
                                     className="w-full px-8 py-4 rounded-full bg-transparent border border-black focus:outline-none focus:ring-2 focus:ring-primary/20 text-[14px] text-gray-600 placeholder:text-black shadow-inner"
                                 />
                             </div>
@@ -196,7 +201,7 @@ export default function Contact({ data = null }: ContactProps) {
                                     type="submit"
                                     className="bg-[#56B291] text-white px-14 py-4 rounded-full hover:bg-primary-hover active:scale-95 transition-all font-bold text-[16px] shadow-lg shadow-primary/20"
                                 >
-                                    {isEnglish ? "Submit" : "Enviar"}
+                                    {language === "ingles" ? "Submit" : "Enviar"}
                                 </button>
                             </div>
                         </form>

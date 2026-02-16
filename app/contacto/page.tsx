@@ -29,7 +29,7 @@ export default async function ContactPage({
             <Header data={headerData} />
             <ContactHero />
             <ContactInfo />
-            <ContactFormMap />
+            <ContactFormMap language={language === "ingles" ? "ingles" : "espanol"} />
             <Footer data={footerData} />
         </main>
     );
