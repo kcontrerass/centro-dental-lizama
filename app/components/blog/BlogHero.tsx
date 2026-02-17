@@ -2,14 +2,20 @@
 
 import Image from "next/image";
 
-export default function BlogHero() {
+interface BlogHeroProps {
+    title?: string;
+    subtitle?: string;
+    backgroundImage?: string;
+}
+
+export default function BlogHero({ title = "Blog", subtitle, backgroundImage = "/banner.png" }: BlogHeroProps) {
     return (
         <section className="relative w-full h-[350px] md:h-[600px] overflow-hidden">
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/banner.png"
-                    alt="Blog"
+                    src={backgroundImage}
+                    alt={title}
                     fill
                     className="object-cover object-center"
                     priority
@@ -18,10 +24,15 @@ export default function BlogHero() {
 
             {/* Content Overlay - Text on the left */}
             <div className="relative z-10 max-w-[1400px] mx-auto h-full flex items-center px-8 md:pl-20">
-                <div className="max-w-md">
+                <div className="max-w-2xl">
                     <h1 className="text-[56px] md:text-[72px] font-bold text-[#70bfa8] leading-tight mb-2 drop-shadow-sm">
-                        Blog
+                        {title}
                     </h1>
+                    {subtitle && (
+                        <p className=" text-[18px] md:text-[24px] text-[#70bfa8] mt-4 drop-shadow-md">
+                            {subtitle}
+                        </p>
+                    )}
                 </div>
             </div>
         </section>

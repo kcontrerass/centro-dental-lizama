@@ -140,3 +140,61 @@ export async function getFooterData(language: "espanol" | "ingles" = "espanol"):
         return null;
     }
 }
+
+export async function getBlogData(language: "espanol" | "ingles" = "espanol"): Promise<WordPressPage | null> {
+    const url = `${API_URL}/pages/${language}/blog`;
+    console.log(`[WordPress API] Fetching blog data for ${language} from: ${url}`);
+    try {
+        const response = await fetch(url, {
+            next: { revalidate: 0 } // Disable cache for testing
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch blog data for ${language}: ${response.statusText}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error(`Error fetching blog data for ${language}:`, error);
+        return null;
+    }
+}
+
+export async function getPostData(slug: string): Promise<WordPressPage | null> {
+    const url = `${API_URL}/posts/${slug}`;
+    console.log(`[WordPress API] Fetching post data for slug: ${slug} from: ${url}`);
+    try {
+        const response = await fetch(url, {
+            next: { revalidate: 0 } // Disable cache for testing
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch post data for slug ${slug}: ${response.statusText}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error(`Error fetching post data for slug ${slug}:`, error);
+        return null;
+    }
+}
+
+export async function getTestimonialsData(language: "espanol" | "ingles" = "espanol"): Promise<WordPressPage | null> {
+    const url = `${API_URL}/pages/${language}/testimoniales`;
+    console.log(`[WordPress API] Fetching testimonials data for ${language} from: ${url}`);
+    try {
+        const response = await fetch(url, {
+            next: { revalidate: 0 } // Disable cache for testing
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch testimonials data for ${language}: ${response.statusText}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error(`Error fetching testimonials data for ${language}:`, error);
+        return null;
+    }
+}
+

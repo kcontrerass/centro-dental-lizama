@@ -4,7 +4,7 @@ import TestimonialsHero from "../components/testimonials/TestimonialsHero";
 import TestimonialsCases from "../components/testimonials/TestimonialsCases";
 import Contact from "../components/home/Contact";
 
-import { getHeaderData, getFooterData } from "@/lib/wordpress";
+import { getHomeData, getHeaderData, getFooterData, getTestimonialsData } from "@/lib/wordpress";
 import { cookies } from "next/headers";
 
 export default async function TestimonialesPage({
@@ -19,17 +19,18 @@ export default async function TestimonialesPage({
     const lang = langParam || langCookie || "es";
     const language = lang === "en" ? "ingles" : "espanol";
 
-    const [headerData, footerData] = await Promise.all([
+    const [headerData, footerData, testimonialsData] = await Promise.all([
         getHeaderData(language),
-        getFooterData(language)
+        getFooterData(language),
+        getTestimonialsData(language)
     ]);
 
     return (
         <main className="min-h-screen bg-white">
             <Header data={headerData} />
-            <TestimonialsHero />
-            <TestimonialsCases />
-            <Contact />
+            <TestimonialsHero data={testimonialsData} />
+            <TestimonialsCases data={testimonialsData} />
+            <Contact data={testimonialsData} language={language} />
             <Footer data={footerData} />
         </main>
     );

@@ -95,28 +95,31 @@ export default function Header({ data }: HeaderProps) {
     const navItems = navButtons.length > 0
         ? navButtons.map(b => {
             let href = b.url || "";
-            const text = b.text?.toLowerCase() || "";
+            let name = b.text || "";
+            const text = name.toLowerCase() || "";
 
-            if (!href || href === "" || href === "#") {
-                // Better mapping with normalization
-                const normalizedText = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            // Perform mapping based on text to ensure internal routes are correct
+            const normalizedText = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-                if (normalizedText.includes("home") || normalizedText.includes("inicio")) href = "/";
-                else if (normalizedText.includes("quienes")) href = "/quienes-somos";
-                else if (normalizedText.includes("testimoniales")) href = "/testimoniales";
-                else if (normalizedText.includes("servicio") && !normalizedText.includes("agendar")) href = "/servicios";
-                else if (normalizedText.includes("ubicacion") || normalizedText.includes("locacion")) href = "/ubicacion";
-                else if (normalizedText.includes("blog")) href = "/blog";
-                else if (normalizedText.includes("contacto") || normalizedText.includes("agendar")) href = "/contacto";
-                else if (normalizedText.includes("servicio")) href = "/servicios"; // Fallback for other services
+            if (normalizedText.includes("home") || normalizedText.includes("inicio")) {
+                href = "/";
+                if (isSpanish) name = "Inicio";
             }
+            else if (normalizedText.includes("quienes")) href = "/quienes-somos";
+            else if (normalizedText.includes("testimoniales") || normalizedText.includes("testimonials")) href = "/testimoniales";
+            else if (normalizedText.includes("agendar")) href = "/agendar-servicio";
+            else if (normalizedText.includes("ubicacion") || normalizedText.includes("locacion")) href = "/ubicacion";
+            else if (normalizedText.includes("blog")) href = "/blog";
+            else if (normalizedText.includes("contacto")) href = "/contacto";
+            else if (normalizedText.includes("servicio")) href = "/servicios";
+
 
             // Ensure unique refs for common items if they still fall back
             if (!href || href === "" || href === "#") {
                 href = "/#"; // Avoid matching home path "/"
             }
 
-            return { name: b.text || "", href };
+            return { name: name, href };
         })
         : [
             { name: "Home", href: "/" },
@@ -334,9 +337,12 @@ function LanguageSelector() {
             params.set("lang", newLang);
         }
 
+        const queryString = params.toString();
+        const url = window.location.pathname + (queryString ? `?${queryString}` : "");
+
         // Use window.location.href for a full refresh to ensure the server 
         // receives the updated cookie in the headers.
-        window.location.href = `?${params.toString()}`;
+        window.location.href = url;
     };
 
     return (
