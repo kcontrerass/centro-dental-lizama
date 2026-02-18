@@ -2,6 +2,7 @@
 
 import { WordPressPage } from "@/lib/wordpress";
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo } from "react";
 
 interface ServicesProps {
@@ -16,6 +17,7 @@ export default function Services({ data }: ServicesProps) {
     let sectionTitle = "Servicios";
     let sectionSubtitle = "Tratamientos especializados del más alto nivel.";
     let buttonText = "Agendar cita";
+    let buttonUrl = "/agendar-servicio";
     let servicesList: any[] = [];
 
     // Find the section that contains the title (case-insensitive)
@@ -84,6 +86,7 @@ export default function Services({ data }: ServicesProps) {
 
         if (buttonBlock && buttonBlock.text) {
           buttonText = buttonBlock.text;
+          buttonUrl = buttonBlock.url || buttonUrl;
         }
       } else if (targetSection.blocks) {
         // Fallback if title not found but section is somehow matched
@@ -106,12 +109,14 @@ export default function Services({ data }: ServicesProps) {
 
         if (foundButton) {
           buttonText = foundButton.text;
+          buttonUrl = foundButton.url || buttonUrl;
         } else if (allButtons.length > 0) {
           // Fallback: Just take the last button found in this section
           // (Usually "Agendar cita" is the last button in the Services block)
           const lastBtn = findButtonBlock([allButtons[allButtons.length - 1]]);
           if (lastBtn && lastBtn.text) {
             buttonText = lastBtn.text;
+            buttonUrl = lastBtn.url || buttonUrl;
           }
         }
       }
@@ -143,6 +148,7 @@ export default function Services({ data }: ServicesProps) {
       title: sectionTitle,
       subtitle: sectionSubtitle,
       buttonText: buttonText,
+      buttonUrl: buttonUrl,
       items: servicesList.length > 0 ? servicesList : null
     };
   }, [data]);
@@ -170,6 +176,7 @@ export default function Services({ data }: ServicesProps) {
   const sectionTitle = servicesData?.title || "Servicios";
   const sectionSubtitle = servicesData?.subtitle || "Tratamientos especializados del más alto nivel.";
   const buttonText = servicesData?.buttonText || "Agendar cita";
+  const buttonUrl = servicesData?.buttonUrl || "/agendar-servicio";
   const infiniteServices = [...currentServices, ...currentServices];
 
   return (
@@ -181,13 +188,16 @@ export default function Services({ data }: ServicesProps) {
           {sectionSubtitle}
         </p>
 
-        <button className="flex items-center gap-3 bg-[#94D4BB] text-white px-7 py-3 rounded-full font-bold text-[14px] transition-all hover:brightness-105 active:scale-95 shadow-sm">
+        <Link
+          href={buttonUrl}
+          className="flex items-center gap-3 bg-[#94D4BB] text-white px-7 py-3 rounded-full font-bold text-[14px] transition-all hover:brightness-105 active:scale-95 shadow-sm"
+        >
           {buttonText}
           <div className="flex items-center gap-1">
             <Image src="/Grupo 17.svg" alt="Icon 17" width={20} height={20} />
             <Image src="/Grupo 25.svg" alt="Icon 25" width={20} height={20} />
           </div>
-        </button>
+        </Link>
       </div>
 
       {/* Right Side: Image Gallery (Infinite Fluid Slider) */}

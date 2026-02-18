@@ -20,6 +20,8 @@ export default function BlogHero({ title = "Blog", subtitle, backgroundImage = "
                     className="object-cover object-center"
                     priority
                 />
+                {/* Overlay for better readability on mobile */}
+                <div className="absolute inset-0  from-white/80 via-white/40 to-transparent md:from-white/60 md:to-transparent"></div>
             </div>
 
             {/* Content Overlay - Text on the left */}

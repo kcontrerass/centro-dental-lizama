@@ -68,7 +68,7 @@ export default function AppointmentHero({ data }: AppointmentHeroProps) {
             <div className="relative z-10 max-w-[1400px] mx-auto h-full flex items-center">
                 <div className="w-full md:w-1/2 px-8 md:pl-20 mt-12 md:mt-0">
                     <div className="max-w-xl">
-                        <h1 className="text-[56px] md:text-[60px] font-bold text-[#70bfa8] leading-tight mb-2 uppercase">
+                        <h1 className="text-[42px] md:text-[60px] font-bold text-[#70bfa8] leading-tight mb-2 uppercase">
                             {title}
                         </h1>
                         <p className="text-[18px] md:text-[22px] text-[#70bfa8] font-medium leading-relaxed mb-8 max-w-[400px]">

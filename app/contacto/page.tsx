@@ -4,7 +4,7 @@ import ContactHero from "../components/contact/ContactHero";
 import ContactInfo from "../components/contact/ContactInfo";
 import ContactFormMap from "../components/contact/ContactFormMap";
 
-import { getHeaderData, getFooterData } from "@/lib/wordpress";
+import { getHeaderData, getFooterData, getContactData } from "@/lib/wordpress";
 import { cookies } from "next/headers";
 
 export default async function ContactPage({
@@ -19,16 +19,17 @@ export default async function ContactPage({
     const lang = langParam || langCookie || "es";
     const language = lang === "en" ? "ingles" : "espanol";
 
-    const [headerData, footerData] = await Promise.all([
+    const [headerData, footerData, contactData] = await Promise.all([
         getHeaderData(language),
-        getFooterData(language)
+        getFooterData(language),
+        getContactData(language)
     ]);
 
     return (
         <main className="min-h-screen bg-white">
             <Header data={headerData} />
-            <ContactHero />
-            <ContactInfo />
+            <ContactHero data={contactData} />
+            <ContactInfo data={contactData} />
             <ContactFormMap language={language === "ingles" ? "ingles" : "espanol"} />
             <Footer data={footerData} />
         </main>

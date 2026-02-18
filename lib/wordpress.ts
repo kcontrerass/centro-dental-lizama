@@ -23,6 +23,8 @@ export interface WordPressPage {
     link: string;
     gutenberg_structure: GutenbergBlock[];
     sections: any[];
+    content?: string;
+    excerpt?: string;
 }
 
 const API_URL = "https://centrodentallizamabackend.aumenta.do/wp-json/gutenberg-api/v1";
@@ -198,3 +200,40 @@ export async function getTestimonialsData(language: "espanol" | "ingles" = "espa
     }
 }
 
+export async function getContactData(language: "espanol" | "ingles" = "espanol"): Promise<WordPressPage | null> {
+    const url = `${API_URL}/pages/${language}/contacto`;
+    console.log(`[WordPress API] Fetching contact data for ${language} from: ${url}`);
+    try {
+        const response = await fetch(url, {
+            next: { revalidate: 0 } // Disable cache for testing
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch contact data for ${language}: ${response.statusText}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error(`Error fetching contact data for ${language}:`, error);
+        return null;
+    }
+}
+
+export async function getLocationData(language: "espanol" | "ingles" = "espanol"): Promise<WordPressPage | null> {
+    const url = `${API_URL}/pages/${language}/ubicacion`;
+    console.log(`[WordPress API] Fetching location data for ${language} from: ${url}`);
+    try {
+        const response = await fetch(url, {
+            next: { revalidate: 0 } // Disable cache for testing
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch location data for ${language}: ${response.statusText}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error(`Error fetching location data for ${language}:`, error);
+        return null;
+    }
+}

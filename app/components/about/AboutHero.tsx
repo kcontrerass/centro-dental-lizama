@@ -76,7 +76,7 @@ export default function AboutHero({ data }: AboutHeroProps) {
             <div className="relative z-10 max-w-[1400px] mx-auto h-full flex items-center">
                 <div className="w-full md:w-1/2 px-8 md:pl-20 md:ml-auto">
                     <div className="max-w-md">
-                        <h1 className="text-[52px] font-extrabold text-[#70bfa8] leading-tight mb-4 drop-shadow-sm">
+                        <h1 className="text-[42px] md:text-[52px] font-extrabold text-[#70bfa8] leading-tight mb-4 drop-shadow-sm">
                             {title}
                         </h1>
                         <p className="text-[20px] text-[#70bfa8] font-medium leading-[1.3] opacity-90 drop-shadow-sm">

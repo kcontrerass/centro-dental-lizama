@@ -2,13 +2,15 @@
 
 import { WordPressPage } from "@/lib/wordpress";
 import Image from "next/image";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 interface SpecialtiesProps {
     data: WordPressPage | null;
 }
 
 export default function Specialties({ data }: SpecialtiesProps) {
+    const [isExpanded, setIsExpanded] = useState(false);
+
     // Process data to find specialties
     const specialtiesData = useMemo(() => {
         if (!data || !data.sections) return null;
@@ -188,6 +190,8 @@ export default function Specialties({ data }: SpecialtiesProps) {
     const sectionSubtitle = specialtiesData?.subtitle || "";
     const buttonText = specialtiesData?.buttonText || "Ver todas";
 
+    const isEnglish = sectionTitle.toLowerCase().includes("specialties");
+
 
     // Split title for styling (First word color 1, rest color 2)
     const titleParts = sectionTitle.trim().split(" ");
@@ -198,7 +202,7 @@ export default function Specialties({ data }: SpecialtiesProps) {
         <section className="py-24 bg-white" id="especialidades">
             <div className="">
                 <div className="text-center mb-24">
-                    <h2 className="text-[52px] font-bold inline-block relative">
+                    <h2 className="text-[36px] md:text-[52px] font-bold inline-block relative">
                         <span className="text-primary">{firstWord}</span>{" "}
                         <span className="text-gray-300">{restOfTitle}</span>
                         <div className="absolute -bottom-4 left-0 w-3/4 h-[4px] bg-primary/20">
@@ -210,10 +214,13 @@ export default function Specialties({ data }: SpecialtiesProps) {
                     </p>
                 </div>
 
+                {/* Limit displayed items to 9 (3 rows on desktop) if not expanded */}
+                {/* Only show the button if there are more than 9 items or if expanded to show "Ver menos" */}
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-16 max-w-7xl mx-auto px-4">
-                    {displayItems.map((item, index) => (
+                    {displayItems.slice(0, isExpanded ? displayItems.length : 9).map((item, index) => (
                         <div key={index} className="flex items-start gap-6 group">
-                            <div className="flex-shrink-0 bg-[#F2F7F6] p-4 rounded-full flex items-center justify-center w-24 h-24 group-hover:bg-[#E8F2F0] transition-colors duration-300 overflow-hidden">
+                            <div className="flex-shrink-0 bg-[#F4F4F4] p-4 rounded-full flex items-center justify-center w-24 h-24 group-hover:bg-[#E8F2F0] transition-colors duration-300 overflow-hidden">
                                 <div className="text-[#72BFA9] relative w-full h-full">
                                     {item.icon.startsWith("<svg") ? (
                                         <div dangerouslySetInnerHTML={{ __html: item.icon }} className="w-full h-full p-2" />
@@ -223,7 +230,7 @@ export default function Specialties({ data }: SpecialtiesProps) {
                                             alt={item.title}
                                             width={60}
                                             height={60}
-                                            className="object-contain"
+                                            className="object-contain "
                                         />
                                     )}
                                 </div>
@@ -240,11 +247,16 @@ export default function Specialties({ data }: SpecialtiesProps) {
                     ))}
                 </div>
 
-                <div className="mt-24 text-center">
-                    <button className="px-16 py-4 border-2 border-[#72BFA9] text-[#72BFA9] rounded-full hover:bg-[#72BFA9] hover:text-white transition-all text-[14px] font-bold uppercase tracking-widest">
-                        {buttonText}
-                    </button>
-                </div>
+                {displayItems.length > 9 && (
+                    <div className="mt-24 text-center">
+                        <button
+                            onClick={() => setIsExpanded(!isExpanded)}
+                            className="px-16 py-4 border-2 border-[#72BFA9] text-[#72BFA9] rounded-full hover:bg-[#72BFA9] hover:text-white transition-all text-[14px] font-bold uppercase tracking-widest"
+                        >
+                            {isExpanded ? (isEnglish ? "See less" : "Ver menos") : buttonText}
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
     );

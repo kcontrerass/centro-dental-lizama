@@ -89,29 +89,30 @@ export default function Footer({ data }: FooterProps) {
     const phoneUrl = phoneBtn?.url || "tel:+50223372540";
 
     return (
-        <footer className="bg-black text-white pt-16 pb-6">
-            <div className="px-20">
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16 items-start">
+        <footer className="w-full text-white">
+            {/* Top Section */}
+            <div className="bg-black pt-16 pb-16 px-8 md:px-20">
+                <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-center md:items-start gap-12 text-center md:text-left">
                     {/* Logo Column */}
-                    <div className="md:col-span-1">
+                    <div className="flex justify-center md:justify-start min-w-[220px]">
                         <Link href="/" className="flex items-center gap-2">
                             <div className="relative w-[220px] h-[60px]">
                                 <Image
                                     src={logoUrl}
                                     alt="Centro Dental Lizama Logo"
                                     fill
-                                    className="object-contain object-left filter brightness-0 invert"
+                                    className="object-contain object-center md:object-left filter brightness-0 invert"
                                 />
                             </div>
                         </Link>
                     </div>
 
                     {/* Links Column */}
-                    <div className="md:col-span-1">
-                        <ul className="space-y-2 text-sm text-gray-400">
+                    <div>
+                        <ul className="space-y-1 text-[13px] text-gray-200">
                             {navItems.map((item, index) => (
                                 <li key={`${item.name}-${index}`}>
-                                    <Link href={item.href} className="hover:text-white transition-colors">
+                                    <Link href={item.href} className="hover:text-primary transition-colors">
                                         {item.name}
                                     </Link>
                                 </li>
@@ -120,27 +121,30 @@ export default function Footer({ data }: FooterProps) {
                     </div>
 
                     {/* Question Column */}
-                    <div className="md:col-span-1">
-                        <h4 className="font-bold text-sm mb-4" dangerouslySetInnerHTML={{ __html: teaserText }}></h4>
+                    <div className="max-w-xs">
+                        <h4 className="font-bold text-[15px] leading-tight" dangerouslySetInnerHTML={{ __html: teaserText }}></h4>
                     </div>
 
-                    {/* Contact/Lang Column */}
-                    <div className="text-center">
-                        <Link href={phoneUrl} className="text-white font-bold text-sm hover:text-primary transition-colors">
+                    {/* Phone Number */}
+                    <div>
+                        <Link href={phoneUrl} className="text-white font-bold text-[16px] hover:text-primary transition-colors tracking-wide">
                             {phoneNumber}
                         </Link>
                     </div>
-                    <div className="md:col-span-1 flex flex-col items-end gap-4">
 
+                    {/* Language Selector */}
+                    <div className="flex flex-col items-center md:items-end">
                         <Suspense fallback={<div className="text-xs text-gray-500">...</div>}>
                             <LanguageSelector />
                         </Suspense>
                     </div>
                 </div>
+            </div>
 
-                {/* Bottom Bar */}
-                <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-center items-center gap-4 text-[10px] text-gray-500 uppercase tracking-widest">
-                    <p dangerouslySetInnerHTML={{ __html: copyrightText }}></p>
+            {/* Bottom Bar - Full Width with different background */}
+            <div className="bg-[#1a1a1a] py-8 px-8 md:px-20">
+                <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-center items-center gap-4 text-[10px] text-white uppercase tracking-[0.2em] font-medium">
+                    <p dangerouslySetInnerHTML={{ __html: copyrightText }} className="text-center"></p>
                     <div className="flex items-center gap-2">
                         {agencyLogoUrl && (
                             <div className="relative w-[80px] h-[20px]">
@@ -149,7 +153,7 @@ export default function Footer({ data }: FooterProps) {
                                         src={agencyLogoUrl}
                                         alt="Agency Logo"
                                         fill
-                                        className="object-contain"
+                                        className="object-contain opacity-70 hover:opacity-100 transition-opacity"
                                     />
                                 </Link>
                             </div>

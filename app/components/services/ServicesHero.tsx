@@ -44,7 +44,7 @@ export default function ServicesHero({ data }: ServicesHeroProps) {
             <div className="relative z-10 max-w-[1400px] mx-auto h-full flex items-center">
                 <div className="w-full md:w-1/2 px-8 md:pl-20">
                     <div className="max-w-xl">
-                        <h1 className="text-[56px] md:text-[72px] font-bold text-[#70bfa8] leading-tight mb-2 drop-shadow-sm">
+                        <h1 className="text-[42px] md:text-[72px] font-bold text-[#70bfa8] leading-tight mb-2 drop-shadow-sm">
                             {title}
                         </h1>
                         <p className="text-[18px] md:text-[22px] text-[#70bfa8] md:w-[400px] font-medium leading-relaxed drop-shadow-sm">

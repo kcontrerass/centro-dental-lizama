@@ -181,7 +181,7 @@ export default function SecondaryServices({ data }: SecondaryServicesProps) {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10">
                     {services.map((service, index) => (
                         <div key={index} className="flex flex-col items-center text-center">
-                            <div className={`w-28 h-28 rounded-full flex items-center justify-center mb-8 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] ${service.highlighted ? 'bg-[#70bfa8]' : 'bg-[#f4fbfc]'}`}>
+                            <div className={`w-28 h-28 rounded-full flex items-center justify-center mb-8 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] ${service.highlighted ? 'bg-[#F4F4F4]' : 'bg-[#F4F4F4]'}`}>
                                 {service.iconUrl ? (
                                     <Image src={service.iconUrl} alt={service.title} width={45} height={45} className="w-[45px] h-[45px] object-contain" />
                                 ) : (

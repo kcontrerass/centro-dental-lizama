@@ -1,6 +1,5 @@
 import Header from "../../components/layout/Header";
 import Footer from "../../components/layout/Footer";
-import Contact from "../../components/home/Contact";
 import Image from "next/image";
 import { getHeaderData, getFooterData, getPostData } from "@/lib/wordpress";
 import { cookies } from "next/headers";
@@ -9,6 +8,8 @@ type Props = {
     params: Promise<{ slug: string }>;
     searchParams: Promise<{ lang?: string }>;
 };
+
+
 
 export default async function BlogPostPage({ params, searchParams }: Props) {
     const { slug } = await params;
@@ -37,9 +38,9 @@ export default async function BlogPostPage({ params, searchParams }: Props) {
         );
     }
 
-    // Extract image and title
-    const imageBlock = postData.gutenberg_structure?.find((block: any) => block.type === "core/image");
-    const imageUrl = imageBlock?.url || "/servicios.png";
+    // Use the first image block as hero image
+    const heroImageUrl: string =
+        postData.gutenberg_structure?.find((b: any) => b.type === "core/image")?.url || "/servicios.png";
 
     return (
         <main className="min-h-screen bg-white">
@@ -48,43 +49,14 @@ export default async function BlogPostPage({ params, searchParams }: Props) {
             <section className="pt-40 pb-20 px-8">
                 <div className="max-w-[800px] mx-auto">
                     <h1
-                        className="text-[48px] md:text-[60px] font-bold text-[#70bfa8] mb-8 leading-tight"
+                        className="text-[32px] md:text-[60px] font-bold text-[#70bfa8] mb-8 leading-tight"
                         dangerouslySetInnerHTML={{ __html: postData.title }}
                     />
 
-                    <div className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden mb-12 shadow-lg">
-                        <Image
-                            src={imageUrl}
-                            alt={postData.title}
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
-
-                    <div className="prose prose-lg max-w-none text-gray-500 font-light leading-relaxed">
-                        {postData.gutenberg_structure?.map((block: any, index: number) => {
-                            if (block.type === "core/paragraph") {
-                                return (
-                                    <p
-                                        key={index}
-                                        className="mb-6"
-                                        dangerouslySetInnerHTML={{ __html: block.content }}
-                                    />
-                                );
-                            }
-                            if (block.type === "core/heading") {
-                                return (
-                                    <h2
-                                        key={index}
-                                        className="text-2xl font-bold text-[#70bfa8] mt-10 mb-6"
-                                        dangerouslySetInnerHTML={{ __html: block.content }}
-                                    />
-                                );
-                            }
-                            // Add more block types if needed
-                            return null;
-                        })}
-                    </div>
+                    <div
+                        className="post-content"
+                        dangerouslySetInnerHTML={{ __html: postData.content || "" }}
+                    />
                 </div>
             </section>
 

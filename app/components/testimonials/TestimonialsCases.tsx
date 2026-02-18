@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Calendar } from "lucide-react";
 
 interface TestimonialsCasesProps {
@@ -109,12 +110,15 @@ export default function TestimonialsCases({ data }: TestimonialsCasesProps) {
                                     {/* CTA Button */}
                                     {buttonBlock && (
                                         <div className="flex justify-start">
-                                            <button className="flex items-center gap-2 bg-[#94D4BB] text-white px-8 py-3 rounded-[12px] font-bold text-[14px] transition-all hover:brightness-105 active:scale-95 shadow-sm">
+                                            <Link
+                                                href={buttonBlock.url || "/agendar-servicio"}
+                                                className="flex items-center gap-2 bg-[#94D4BB] text-white px-8 py-3 rounded-[12px] font-bold text-[14px] transition-all hover:brightness-105 active:scale-95 shadow-sm"
+                                            >
                                                 {buttonBlock.text}
                                                 <div className="bg-white/20 p-1 rounded-md ml-2">
                                                     <Calendar className="w-4 h-4" />
                                                 </div>
-                                            </button>
+                                            </Link>
                                         </div>
                                     )}
                                 </div>

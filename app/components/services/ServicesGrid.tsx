@@ -84,7 +84,7 @@ export default function ServicesGrid({ data }: ServicesGridProps) {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     {services.map((service, index) => (
                         <div key={index} className="flex flex-col items-center text-center">
-                            <div className="w-28 h-28 bg-[#f4fbfc] rounded-full flex items-center justify-center mb-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] uppercase">
+                            <div className="w-28 h-28 bg-[#F4F4F4] rounded-full flex items-center justify-center mb-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] uppercase">
                                 {service.iconUrl ? (
                                     <Image src={service.iconUrl} alt={service.title} width={55} height={55} className="w-[55px] h-[55px] object-contain" />
                                 ) : (

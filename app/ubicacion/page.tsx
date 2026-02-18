@@ -5,10 +5,10 @@ import LocationMap from "../components/location/LocationMap";
 import LocationCTA from "../components/location/LocationCTA";
 import Contact from "../components/home/Contact";
 
-import { getHeaderData, getFooterData } from "@/lib/wordpress";
+import { getHeaderData, getFooterData, getLocationData } from "@/lib/wordpress";
 import { cookies } from "next/headers";
 
-export default async function UbicacionPage({
+export default async function LocationPage({
     searchParams,
 }: {
     searchParams: Promise<{ lang?: string }>;
@@ -20,18 +20,26 @@ export default async function UbicacionPage({
     const lang = langParam || langCookie || "es";
     const language = lang === "en" ? "ingles" : "espanol";
 
-    const [headerData, footerData] = await Promise.all([
+    const [headerData, footerData, locationData] = await Promise.all([
         getHeaderData(language),
-        getFooterData(language)
+        getFooterData(language),
+        getLocationData(language)
     ]);
+
+    const contentBlocks = locationData?.sections?.find((s: any) => s.type === "content")?.blocks || [];
+
+    // Mapping blocks based on the JSON structure
+    const caption = contentBlocks[0]?.content;
+    const wazeButton = contentBlocks[1]?.buttons?.[0];
+    const address = contentBlocks[2]?.content;
 
     return (
         <main className="min-h-screen bg-white">
             <Header data={headerData} />
-            <LocationHero />
-            <LocationMap />
-            <LocationCTA />
-            <Contact />
+            <LocationHero data={locationData} />
+            <LocationMap caption={caption} />
+            <LocationCTA button={wazeButton} address={address} />
+            <Contact data={locationData} language={language === "ingles" ? "ingles" : "espanol"} />
             <Footer data={footerData} />
         </main>
     );

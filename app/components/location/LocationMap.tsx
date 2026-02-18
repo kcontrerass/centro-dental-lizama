@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-export default function LocationMap() {
+export default function LocationMap({ caption }: { caption?: string }) {
     return (
         <section className="py-20 bg-white">
             <div className="max-w-[1200px] mx-auto px-8">
@@ -23,7 +23,7 @@ export default function LocationMap() {
                 {/* Caption */}
                 <div className="text-center">
                     <p className="text-[#a0a0a0] text-[18px] md:text-[22px] font-light italic">
-                        Ubicados en la zona médica más importante de Guatemala
+                        {caption || "Ubicados en la zona médica más importante de Guatemala"}
                     </p>
                 </div>
             </div>

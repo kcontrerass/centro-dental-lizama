@@ -43,23 +43,24 @@ export default function Team({ data }: TeamProps) {
     return (
         <section className="py-24 bg-white overflow-hidden" id="equipo">
             <div className="container-custom">
-                <div className="flex flex-col md:flex-row items-center gap-20">
+                <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
                     {/* Left Side: Team Image */}
-                    <div className="md:w-1/2 relative">
+                    <div className="w-full md:w-1/2 relative mb-12 md:mb-0">
                         <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-sm">
                             <Image
                                 src={info.image}
                                 alt="Dental Team"
                                 fill
                                 className="object-cover"
+                                priority
                             />
                         </div>
                     </div>
 
                     {/* Right Side: Content */}
-                    <div className="md:w-1/2 text-left">
+                    <div className="w-full md:w-1/2 text-left">
                         <span className="text-gray-400 font-bold uppercase tracking-tight text-[13px] mb-2 block">{info.tag}</span>
-                        <h2 className="text-[44px] font-bold text-gray-900 mb-4 leading-tight">
+                        <h2 className="text-[32px] md:text-[44px] font-bold text-gray-900 mb-4 leading-tight">
                             {info.title}
                         </h2>
                         <p className="text-gray-400 text-[14px] mb-12 leading-relaxed">

@@ -28,7 +28,7 @@ export default function TestimonialsHero({ data }: TestimonialsHeroProps) {
             <div className="relative z-10 max-w-[1400px] mx-auto h-full flex items-center justify-end px-8 md:pr-20">
                 <div className="max-w-xl text-right">
                     <h1
-                        className="text-[56px] md:text-[72px] font-bold text-[#70bfa8] leading-tight mb-2 drop-shadow-sm"
+                        className="text-[46px] md:text-[72px] font-bold text-[#70bfa8] leading-tight mb-2 drop-shadow-sm"
                         dangerouslySetInnerHTML={{ __html: title }}
                     />
                 </div>
