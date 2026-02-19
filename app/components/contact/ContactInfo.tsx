@@ -51,6 +51,7 @@ export default function ContactInfo({ data }: ContactInfoProps) {
 
     return (
         <section className="bg-[#4fb0a2] py-16 px-8 text-white">
+            <h1 className="text-[40px] md:text-[72px] font-bold text-center mb-10">{title}</h1>
             <div className="max-w-[1200px] mx-auto flex flex-col items-center text-center">
 
                 {/* Schedules */}
