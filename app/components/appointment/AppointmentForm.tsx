@@ -30,6 +30,7 @@ export default function AppointmentForm({ data, language = "espanol" }: Appointm
             dentist: "Selecciona a tu dentista",
             service: "Tipo de servicio",
             date: "01/02/2025",
+            dateLabel: "Ingresa la fecha",
             time: "Selección horario",
             submit: "Reserva ahora",
             success: "¡Cita reservada con éxito!",
@@ -66,6 +67,7 @@ export default function AppointmentForm({ data, language = "espanol" }: Appointm
             dentist: "Select your dentist",
             service: "Service type",
             date: "MM/DD/YYYY",
+            dateLabel: "Enter the date",
             time: "Select time",
             submit: "Book now",
             success: "Appointment booked successfully!",
@@ -239,14 +241,14 @@ export default function AppointmentForm({ data, language = "espanol" }: Appointm
                             </div>
                         </div>
                         <div className="col-span-1">
+
                             <input
                                 name="appointment-date"
                                 value={formData["appointment-date"]}
                                 onChange={handleInputChange}
                                 type="date"
-                                placeholder={t.date}
                                 required
-                                className="w-full px-6 md:px-8 py-3.5 rounded-full border border-gray-400 bg-white focus:outline-none focus:border-[#4EB99F] transition-all text-sm text-gray-800 placeholder:text-gray-900 font-medium"
+                                className="w-full px-6 md:px-8 py-3.5 rounded-full border border-gray-400 bg-white focus:outline-none focus:border-[#4EB99F] transition-all text-sm text-gray-800 font-medium appearance-none block min-h-[48px]"
                             />
                         </div>
                         <div className="col-span-1">
