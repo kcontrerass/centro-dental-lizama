@@ -226,9 +226,15 @@ export default function AppointmentForm({ data, language = "espanol" }: Appointm
                                     className="w-full px-6 md:px-8 py-3.5 rounded-full border border-gray-400 bg-white focus:outline-none focus:border-[#4EB99F] transition-all appearance-none text-sm text-gray-900 font-medium"
                                 >
                                     <option value="">{t.service}</option>
-                                    {t.serviceOptions.map((opt) => (
-                                        <option key={opt} value={opt}>{opt}</option>
-                                    ))}
+                                    {translations.espanol.serviceOptions.map((optEs, index) => {
+                                        const optEn = translations.ingles.serviceOptions[index];
+                                        const label = language === "ingles" ? optEn : optEs;
+                                        return (
+                                            <option key={optEs} value={optEs}>
+                                                {label}
+                                            </option>
+                                        );
+                                    })}
                                 </select>
                             </div>
                         </div>
