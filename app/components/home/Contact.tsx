@@ -1,7 +1,7 @@
 "use client";
 
 import { WordPressPage } from "@/lib/wordpress";
-import { MapPin, MessageCircle, Instagram, Facebook, Twitter, Linkedin, Youtube, Globe } from "lucide-react";
+import { MapPin, MessageCircle, Instagram, Twitter, Linkedin, Youtube, Globe } from "lucide-react";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 
@@ -105,7 +105,15 @@ export default function Contact({ data = null, language = "espanol" }: ContactPr
     const getSocialIcon = (service: string) => {
         switch (service) {
             case 'instagram': return <Instagram size={24} />;
-            case 'facebook': return <Facebook size={24} />;
+            case 'facebook': return (
+                <Image
+                    src="/face.png"
+                    alt="Facebook"
+                    width={24}
+                    height={24}
+                    className="w-6 h-6 object-contain"
+                />
+            );
             case 'twitter': return <Twitter size={24} />;
             case 'linkedin': return <Linkedin size={24} />;
             case 'youtube': return <Youtube size={24} />;
@@ -208,7 +216,7 @@ export default function Contact({ data = null, language = "espanol" }: ContactPr
                                 <div className="flex items-center gap-4 flex-wrap">
                                     <div className="flex items-center gap-2">
                                         <WhatsAppIcon className="w-7 h-7 text-[#4fb0a2]" />
-                                        <a href={`https://wa.me/${waPhone.replace(/[^0-9+]/g, "")}`} target="_blank" rel="noopener noreferrer" className="hover:text-[#4fb0a2] font-bold">
+                                        <a href={`https://wa.me/${waPhone.replace(/[^0-9]/g, "")}`} target="_blank" rel="noopener noreferrer" className="hover:text-[#4fb0a2] font-bold">
                                             {waPhone}
                                         </a>
                                     </div>
@@ -237,7 +245,13 @@ export default function Contact({ data = null, language = "espanol" }: ContactPr
                                                 <Instagram size={24} />
                                             </a>
                                             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[#4fb0a2] hover:opacity-80 transition-all hover:scale-110">
-                                                <Facebook size={24} />
+                                                <Image
+                                                    src="/face.png"
+                                                    alt="Facebook"
+                                                    width={24}
+                                                    height={24}
+                                                    className="w-6 h-6 object-contain"
+                                                />
                                             </a>
                                         </>
                                     )}

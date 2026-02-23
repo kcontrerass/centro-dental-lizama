@@ -1,6 +1,7 @@
 "use client";
 
-import { Instagram, Facebook, MapPin, Phone } from "lucide-react";
+import { Instagram, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 import { WordPressPage } from "@/lib/wordpress";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -43,9 +44,9 @@ export default function ContactInfo({ data }: ContactInfoProps) {
     const socialLinks = socialLinksBlock?.blocks || [];
 
     const phoneLinks = phones?.split("|").map((p: string) => p.trim()) || [];
-
     const formatWhatsAppLink = (text: string) => {
         const cleaned = text.replace(/\D/g, "");
+        console.log(cleaned);
         return `https://wa.me/${cleaned}`;
     };
 
@@ -104,10 +105,30 @@ export default function ContactInfo({ data }: ContactInfoProps) {
                     )}
                 </div>
 
-                {/* Social Media Icons */}
                 <div className="flex items-center gap-6">
                     {socialLinks.map((social: any, idx: number) => {
-                        const Icon = social.attributes?.service === "instagram" ? Instagram : Facebook;
+                        const isInstagram = social.attributes?.service === "instagram";
+                        if (!isInstagram) {
+                            return (
+                                <a
+                                    key={idx}
+                                    href={social.attributes?.url || "#"}
+                                    className="text-white hover:opacity-80 transition-opacity"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Image
+                                        src="/facebookwhite.png"
+                                        alt="Facebook"
+                                        width={32}
+                                        height={32}
+                                        className="w-8 h-8 object-contain"
+                                    />
+                                </a>
+                            );
+                        }
+
+                        const Icon = Instagram;
                         return (
                             <a
                                 key={idx}

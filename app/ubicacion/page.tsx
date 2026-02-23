@@ -1,4 +1,5 @@
 import Header from "../components/layout/Header";
+// Force cache bust to resolve Next.js Turbopack hydration mismatch
 import Footer from "../components/layout/Footer";
 import LocationHero from "../components/location/LocationHero";
 import LocationMap from "../components/location/LocationMap";
