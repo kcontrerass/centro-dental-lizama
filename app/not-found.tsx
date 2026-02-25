@@ -4,10 +4,27 @@ import Footer from "./components/layout/Footer";
 import { getHeaderData, getFooterData } from "@/lib/wordpress";
 import { cookies } from "next/headers";
 
+type Locale = "es" | "en";
+
+const translations: Record<Locale, { title: string; subtitle: string; description: string; button: string }> = {
+    es: {
+        title: "404",
+        subtitle: "Página no encontrada",
+        description: "Lo sentimos, la página que estás buscando no existe o ha sido movida.",
+        button: "Volver al inicio"
+    },
+    en: {
+        title: "404",
+        subtitle: "Page Not Found",
+        description: "Sorry, the page you are looking for does not exist or has been moved.",
+        button: "Back to Home"
+    }
+};
+
 export default async function NotFound() {
     const cookieStore = await cookies();
     const langCookie = cookieStore.get("lang")?.value;
-    const lang = langCookie || "es";
+    const lang: Locale = langCookie === "en" ? "en" : "es";
     const language = lang === "en" ? "ingles" : "espanol";
 
     const [headerData, footerData] = await Promise.all([
@@ -15,20 +32,7 @@ export default async function NotFound() {
         getFooterData(language)
     ]);
 
-    const t = {
-        es: {
-            title: "404",
-            subtitle: "Página no encontrada",
-            description: "Lo sentimos, la página que estás buscando no existe o ha sido movida.",
-            button: "Volver al inicio"
-        },
-        en: {
-            title: "404",
-            subtitle: "Page Not Found",
-            description: "Sorry, the page you are looking for does not exist or has been moved.",
-            button: "Back to Home"
-        }
-    }[lang as "es" | "en"] || t.es;
+    const t = translations[lang];
 
     return (
         <div className="min-h-screen bg-white flex flex-col">
