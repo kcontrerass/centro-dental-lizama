@@ -84,10 +84,10 @@ export default function Footer({ data }: FooterProps) {
     const copyrightParagraph = paragraphs.find(p => p.content?.toLowerCase().includes("all right") || p.content?.toLowerCase().includes("todos los derechos") || p.content?.toLowerCase().includes("rights reserved"));
 
     const teaserText = teaserParagraph?.content || (isSpanish ? "¿Vienes del extranjero?" : "Are you from abroad?");
-    const copyrightText = copyrightParagraph?.content || "";
+    const copyrightText = copyrightParagraph?.content || "POWERED BY";
     const phoneNumber = phoneBtn?.text || "+502 2337-2540";
     const phoneUrl = phoneBtn?.url || "tel:+50223372540";
-
+    console.log(copyrightText)
     return (
         <footer className="w-full text-white">
             {/* Top Section */}
