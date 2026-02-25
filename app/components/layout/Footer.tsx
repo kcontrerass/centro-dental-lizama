@@ -40,7 +40,7 @@ export default function Footer({ data }: FooterProps) {
 
     // Extract Logo (usually the first image)
     const images = findBlocksByType(structure, "core/image");
-    const logoUrl = images[0]?.url || "/logo-white.png";
+    const logoUrl = images[0]?.url || "";
     const agencyLogoUrl = images[images.length - 1]?.url; // Usually the last image is the agency logo
 
     // Extract Links (core/buttons in the first column group)
@@ -84,7 +84,7 @@ export default function Footer({ data }: FooterProps) {
     const copyrightParagraph = paragraphs.find(p => p.content?.toLowerCase().includes("all right") || p.content?.toLowerCase().includes("todos los derechos") || p.content?.toLowerCase().includes("rights reserved"));
 
     const teaserText = teaserParagraph?.content || (isSpanish ? "¿Vienes del extranjero?" : "Are you from abroad?");
-    const copyrightText = copyrightParagraph?.content || "2024 Fair trade Workforce. All right reserved.";
+    const copyrightText = copyrightParagraph?.content || "";
     const phoneNumber = phoneBtn?.text || "+502 2337-2540";
     const phoneUrl = phoneBtn?.url || "tel:+50223372540";
 
