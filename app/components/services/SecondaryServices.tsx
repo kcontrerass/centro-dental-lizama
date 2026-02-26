@@ -1,5 +1,6 @@
-import { WordPressPage } from "@/lib/wordpress";
+import { WordPressPage, getServiceSlug } from "@/lib/wordpress";
 import Image from "next/image";
+import Link from "next/link";
 
 interface SecondaryServicesProps {
     data: WordPressPage | null;
@@ -156,7 +157,7 @@ export default function SecondaryServices({ data }: SecondaryServicesProps) {
                                 title: paragraphs[0]?.content || "",
                                 description: paragraphs[1]?.content || "",
                                 iconUrl: imageBlock?.attributes?.url || imageBlock?.url,
-                                highlighted: false // Custom logic for highlighting can be added if needed
+                                highlighted: false
                             });
                         }
                     });
@@ -164,8 +165,6 @@ export default function SecondaryServices({ data }: SecondaryServicesProps) {
             });
 
             if (extractedServices.length > 0) {
-                // Keep the special highlighting for the second item if it's the fallback or if we want to preserve that style
-                // For now, let's just use the extracted ones
                 services = extractedServices;
             }
         }
@@ -179,24 +178,27 @@ export default function SecondaryServices({ data }: SecondaryServicesProps) {
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-10">
-                    {services.map((service, index) => (
-                        <div key={index} className="flex flex-col items-center text-center">
-                            <div className={`w-28 h-28 rounded-full flex items-center justify-center mb-8 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] ${service.highlighted ? 'bg-[#F4F4F4]' : 'bg-[#F4F4F4]'}`}>
-                                {service.iconUrl ? (
-                                    <Image src={service.iconUrl} alt={service.title} width={45} height={45} className="w-[45px] h-[45px] object-contain" />
-                                ) : (
-                                    (service as any).icon
-                                )}
-                            </div>
+                    {services.map((service, index) => {
+                        const slug = getServiceSlug(service.title);
+                        return (
+                            <Link key={index} href={`/servicios/${slug}${data?.link?.includes("/ingles/") ? "?lang=en" : ""}`} className="flex flex-col items-center text-center group cursor-pointer">
+                                <div className={`w-28 h-28 rounded-full flex items-center justify-center mb-8 relative shadow-[0_10px_30px_rgba(0,0,0,0.05)] bg-[#F4F4F4] group-hover:scale-105 transition-transform`}>
+                                    {service.iconUrl ? (
+                                        <Image src={service.iconUrl} alt={service.title} width={45} height={45} className="w-[45px] h-[45px] object-contain" />
+                                    ) : (
+                                        (service as any).icon
+                                    )}
+                                </div>
 
-                            <h3 className="text-[20px] font-extrabold text-[#70bfa8] mb-4 tracking-wider leading-tight max-w-[200px] uppercase">
-                                {service.title}
-                            </h3>
-                            <p className="text-gray-400 text-[18px] leading-relaxed max-w-[280px] font-light">
-                                {service.description}
-                            </p>
-                        </div>
-                    ))}
+                                <h3 className="text-[20px] font-extrabold text-[#70bfa8] mb-4 tracking-wider leading-tight max-w-[200px] uppercase group-hover:text-primary transition-colors">
+                                    {service.title}
+                                </h3>
+                                <p className="text-gray-400 text-[18px] leading-relaxed max-w-[280px] font-light">
+                                    {service.description}
+                                </p>
+                            </Link>
+                        );
+                    })}
                 </div>
             </div>
         </section>

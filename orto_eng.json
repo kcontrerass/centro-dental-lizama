@@ -1,0 +1,375 @@
+{
+  "id": 447,
+  "title": "Ortodoncia",
+  "slug": "ortodoncia",
+  "status": "publish",
+  "date": "2026-02-26 16:36:20",
+  "modified": "2026-02-26 16:36:20",
+  "link": "https://centrodentallizamabackend.aumenta.do/ingles/servicios/ortodoncia/",
+  "gutenberg_structure": [
+    {
+      "type": "core/cover",
+      "attributes": {
+        "url": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/servicios-scaled.jpg",
+        "id": 227,
+        "dimRatio": 0,
+        "customOverlayColor": "#e3e3e6",
+        "isUserOverlayColor": false,
+        "isDark": false,
+        "sizeSlug": "full",
+        "layout": {
+          "type": "constrained"
+        }
+      },
+      "backgroundImage": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/servicios-scaled.jpg",
+      "overlayColor": "",
+      "blocks": [
+        {
+          "type": "core/paragraph",
+          "attributes": {
+            "align": "left",
+            "placeholder": "Escribe el título…",
+            "fontSize": "large"
+          },
+          "content": "Orthodontics"
+        },
+        {
+          "type": "core/paragraph",
+          "attributes": [],
+          "content": "It all starts with a dental cleaning and"
+        },
+        {
+          "type": "core/paragraph",
+          "attributes": [],
+          "content": "complete evaluation"
+        },
+        {
+          "type": "core/buttons",
+          "attributes": [],
+          "buttons": [
+            {
+              "type": "core/button",
+              "attributes": [],
+              "text": "Book appointment",
+              "url": "",
+              "linkTarget": "",
+              "rel": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "core/columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": null,
+          "blocks": [
+            {
+              "type": "core/image",
+              "attributes": {
+                "id": 252,
+                "sizeSlug": "large",
+                "linkDestination": "none",
+                "align": "left"
+              },
+              "url": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/dental-1-1024x682.jpg",
+              "alt": "",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "width": null,
+          "blocks": [
+            {
+              "type": "core/paragraph",
+              "attributes": [],
+              "content": "Why is dental cleaning every 6 months important?"
+            },
+            {
+              "type": "core/paragraph",
+              "attributes": [],
+              "content": "We have often heard from friends or patients the expressions, \"Why do you go to the dentist so many times to clean your teeth?\", or \"I only go once a year and that's more than enough\"; or even worse, \"I have never gone to the dentist for a dental cleaning because I feel that I don't need it.\""
+            },
+            {
+              "type": "core/paragraph",
+              "attributes": [],
+              "content": "We can have a disease without experiencing any symptoms, so it's necessary to examine teeth and gums clinically and radiographically to rule out cavities, fractures, gingivitis, periodontitis, and other conditions. It's scientifically proven that we should have a deep dental cleaning every six months. This allows us, as healthcare professionals, to remove tartar, dental calculus, food stains, and other debris. When teeth are completely clean, we can examine them in detail and detect any potentially more complex and painful issues."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "core/columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": null,
+          "blocks": [
+            {
+              "type": "core/paragraph",
+              "attributes": [],
+              "content": "In some cases, the time between dental cleanings can be less than 6 months. For example, some patients may only need a dental cleaning every 3 or 4 months, and this can be due to systemic, physical, or psychological conditions that cause the patient to produce more tartar than normal or require more meticulous care from us as clinicians. Patients who may fall into this category include:"
+            },
+            {
+              "type": "core/list",
+              "attributes": [],
+              "items": [
+                "Diabetics",
+                "Hypertensive",
+                "Senile Dementia",
+                "Alzheimer",
+                "Parkinson",
+                "Smoker"
+              ],
+              "ordered": false
+            },
+            {
+              "type": "core/paragraph",
+              "attributes": [],
+              "content": "Patients with special needs: autism, Down syndrome, etc. If you have any questions or concerns, please don't hesitate to contact us. We'd be happy to help and welcome you."
+            }
+          ]
+        },
+        {
+          "width": null,
+          "blocks": [
+            {
+              "type": "core/image",
+              "attributes": {
+                "id": 253,
+                "sizeSlug": "large",
+                "linkDestination": "none",
+                "align": "left"
+              },
+              "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/dental2-1024x682.jpg",
+              "alt": "",
+              "caption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "core/columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": null,
+          "blocks": [
+            {
+              "type": "core/paragraph",
+              "attributes": {
+                "align": "center",
+                "fontSize": "xx-large"
+              },
+              "content": "Book your appointment"
+            }
+          ]
+        },
+        {
+          "width": null,
+          "blocks": [
+            {
+              "type": "core/image",
+              "attributes": {
+                "id": 255,
+                "sizeSlug": "large",
+                "linkDestination": "none"
+              },
+              "url": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/dental-imagen-1024x683.jpg",
+              "alt": "",
+              "caption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "type": "cover",
+      "attributes": {
+        "url": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/servicios-scaled.jpg",
+        "id": 227,
+        "dimRatio": 0,
+        "customOverlayColor": "#e3e3e6",
+        "isUserOverlayColor": false,
+        "isDark": false,
+        "sizeSlug": "full",
+        "layout": {
+          "type": "constrained"
+        }
+      },
+      "backgroundImage": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/servicios-scaled.jpg",
+      "overlayColor": "",
+      "blocks": [
+        {
+          "type": "core/paragraph",
+          "attributes": {
+            "align": "left",
+            "placeholder": "Escribe el título…",
+            "fontSize": "large"
+          },
+          "content": "Orthodontics"
+        },
+        {
+          "type": "core/paragraph",
+          "attributes": [],
+          "content": "It all starts with a dental cleaning and"
+        },
+        {
+          "type": "core/paragraph",
+          "attributes": [],
+          "content": "complete evaluation"
+        },
+        {
+          "type": "core/buttons",
+          "attributes": [],
+          "buttons": [
+            {
+              "type": "core/button",
+              "attributes": [],
+              "text": "Book appointment",
+              "url": "",
+              "linkTarget": "",
+              "rel": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": null,
+          "blocks": [
+            {
+              "type": "core/image",
+              "attributes": {
+                "id": 252,
+                "sizeSlug": "large",
+                "linkDestination": "none",
+                "align": "left"
+              },
+              "url": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/dental-1-1024x682.jpg",
+              "alt": "",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "width": null,
+          "blocks": [
+            {
+              "type": "core/paragraph",
+              "attributes": [],
+              "content": "Why is dental cleaning every 6 months important?"
+            },
+            {
+              "type": "core/paragraph",
+              "attributes": [],
+              "content": "We have often heard from friends or patients the expressions, \"Why do you go to the dentist so many times to clean your teeth?\", or \"I only go once a year and that's more than enough\"; or even worse, \"I have never gone to the dentist for a dental cleaning because I feel that I don't need it.\""
+            },
+            {
+              "type": "core/paragraph",
+              "attributes": [],
+              "content": "We can have a disease without experiencing any symptoms, so it's necessary to examine teeth and gums clinically and radiographically to rule out cavities, fractures, gingivitis, periodontitis, and other conditions. It's scientifically proven that we should have a deep dental cleaning every six months. This allows us, as healthcare professionals, to remove tartar, dental calculus, food stains, and other debris. When teeth are completely clean, we can examine them in detail and detect any potentially more complex and painful issues."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": null,
+          "blocks": [
+            {
+              "type": "core/paragraph",
+              "attributes": [],
+              "content": "In some cases, the time between dental cleanings can be less than 6 months. For example, some patients may only need a dental cleaning every 3 or 4 months, and this can be due to systemic, physical, or psychological conditions that cause the patient to produce more tartar than normal or require more meticulous care from us as clinicians. Patients who may fall into this category include:"
+            },
+            {
+              "type": "core/list",
+              "attributes": [],
+              "items": [
+                "Diabetics",
+                "Hypertensive",
+                "Senile Dementia",
+                "Alzheimer",
+                "Parkinson",
+                "Smoker"
+              ],
+              "ordered": false
+            },
+            {
+              "type": "core/paragraph",
+              "attributes": [],
+              "content": "Patients with special needs: autism, Down syndrome, etc. If you have any questions or concerns, please don't hesitate to contact us. We'd be happy to help and welcome you."
+            }
+          ]
+        },
+        {
+          "width": null,
+          "blocks": [
+            {
+              "type": "core/image",
+              "attributes": {
+                "id": 253,
+                "sizeSlug": "large",
+                "linkDestination": "none",
+                "align": "left"
+              },
+              "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/dental2-1024x682.jpg",
+              "alt": "",
+              "caption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": null,
+          "blocks": [
+            {
+              "type": "core/paragraph",
+              "attributes": {
+                "align": "center",
+                "fontSize": "xx-large"
+              },
+              "content": "Book your appointment"
+            }
+          ]
+        },
+        {
+          "width": null,
+          "blocks": [
+            {
+              "type": "core/image",
+              "attributes": {
+                "id": 255,
+                "sizeSlug": "large",
+                "linkDestination": "none"
+              },
+              "url": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/dental-imagen-1024x683.jpg",
+              "alt": "",
+              "caption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1141 @@
+{
+  "id": 22,
+  "title": "Servicios",
+  "slug": "servicios",
+  "status": "publish",
+  "date": "2026-01-30 20:40:50",
+  "modified": "2026-02-13 19:04:59",
+  "link": "https://centrodentallizamabackend.aumenta.do/espanol/servicios/",
+  "gutenberg_structure": [
+    {
+      "type": "core/cover",
+      "attributes": {
+        "url": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/servicios-scaled.jpg",
+        "id": 227,
+        "dimRatio": 10,
+        "customOverlayColor": "#e3e3e6",
+        "isUserOverlayColor": false,
+        "isDark": false,
+        "sizeSlug": "full",
+        "layout": {
+          "type": "constrained"
+        }
+      },
+      "backgroundImage": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/servicios-scaled.jpg",
+      "overlayColor": "",
+      "blocks": [
+        {
+          "type": "core/paragraph",
+          "attributes": {
+            "align": "left",
+            "placeholder": "Escribe el título…",
+            "fontSize": "large"
+          },
+          "content": "Servicios"
+        },
+        {
+          "type": "core/paragraph",
+          "attributes": [],
+          "content": "Tratamientos especializados del"
+        },
+        {
+          "type": "core/paragraph",
+          "attributes": [],
+          "content": "màs alto nivel."
+        }
+      ]
+    },
+    {
+      "type": "core/paragraph",
+      "attributes": {
+        "align": "center"
+      },
+      "content": "Todos nuestros tratamientos son realizados con amor por uno de nuestros especialistas para garantizar tu satisfacción."
+    },
+    {
+      "type": "core/columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 96,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1434.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "Diseño de sonrisa"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "Mejoramos tu sonrisa con carillas, coronas y cirugía periodontal."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 232,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/limpieza.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "Ortodoncia"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Alineación dental con brackets metálicos, cerámicos o de zafiro, mejorando estética y función."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.33%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 102,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1392.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "Examen dental"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Lorem Ipsum is simply dummy text of the printing and"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "core/paragraph",
+      "attributes": {
+        "align": "center",
+        "fontSize": "large"
+      },
+      "content": "Conoce más de nuestros servicios"
+    },
+    {
+      "type": "core/columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 235,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1421.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "ODONTOPEDIATRÍA"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Técnicas modernas y seguras para el manejo de niños, eliminando estrés y miedo."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 103,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1386.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "PERIODONCIA (TRATAMIENTO DE ENCÍAS)"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Limpieza profunda: elimina sarro, manchas y fortalece el esmalte."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.33%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 105,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1388.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "CORONA DENTAL"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Restauración total para dientes desgastados o fracturados, preservándolos al máximo."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "core/columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 101,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1390.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "IMPLANTES DENTALES"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Colocamos tornillos de titanio e implantamos coronas con tecnología 3D para máxima precisión."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 104,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1391.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "ENDODONCIA"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Se extrae el nervio, se limpia, sella y restaura el diente."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.33%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 238,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1417.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "PRÓTESIS REMOVIBLE"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Alternativa estética y higiénica para pacientes que no pueden usar prótesis fijas o implantes."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "core/columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 236,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1413.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "CARILLA DENTAL"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Restauración frontal para mejorar estética, cerrar espacios y rejuvenecer tu sonrisa."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 237,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1415.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "INCRUSTACIÓN DENTAL"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Restauración frontal para mejorar estética, cerrar espacios y rejuvenecer tu sonrisa."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.33%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 239,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1423.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "ALINEADORES"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Alineación dental con tecnología 3D y acetatos transparentes, sin brackets."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "type": "cover",
+      "attributes": {
+        "url": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/servicios-scaled.jpg",
+        "id": 227,
+        "dimRatio": 10,
+        "customOverlayColor": "#e3e3e6",
+        "isUserOverlayColor": false,
+        "isDark": false,
+        "sizeSlug": "full",
+        "layout": {
+          "type": "constrained"
+        }
+      },
+      "backgroundImage": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/servicios-scaled.jpg",
+      "overlayColor": "",
+      "blocks": [
+        {
+          "type": "core/paragraph",
+          "attributes": {
+            "align": "left",
+            "placeholder": "Escribe el título…",
+            "fontSize": "large"
+          },
+          "content": "Servicios"
+        },
+        {
+          "type": "core/paragraph",
+          "attributes": [],
+          "content": "Tratamientos especializados del"
+        },
+        {
+          "type": "core/paragraph",
+          "attributes": [],
+          "content": "màs alto nivel."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "blocks": [
+        {
+          "type": "core/paragraph",
+          "attributes": {
+            "align": "center"
+          },
+          "content": "Todos nuestros tratamientos son realizados con amor por uno de nuestros especialistas para garantizar tu satisfacción."
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 96,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1434.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "Diseño de sonrisa"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "Mejoramos tu sonrisa con carillas, coronas y cirugía periodontal."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 232,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/limpieza.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "Ortodoncia"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Alineación dental con brackets metálicos, cerámicos o de zafiro, mejorando estética y función."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.33%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 102,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1392.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "Examen dental"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Lorem Ipsum is simply dummy text of the printing and"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "blocks": [
+        {
+          "type": "core/paragraph",
+          "attributes": {
+            "align": "center",
+            "fontSize": "large"
+          },
+          "content": "Conoce más de nuestros servicios"
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 235,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1421.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "ODONTOPEDIATRÍA"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Técnicas modernas y seguras para el manejo de niños, eliminando estrés y miedo."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 103,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1386.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "PERIODONCIA (TRATAMIENTO DE ENCÍAS)"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Limpieza profunda: elimina sarro, manchas y fortalece el esmalte."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.33%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 105,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1388.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "CORONA DENTAL"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Restauración total para dientes desgastados o fracturados, preservándolos al máximo."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 101,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1390.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "IMPLANTES DENTALES"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Colocamos tornillos de titanio e implantamos coronas con tecnología 3D para máxima precisión."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 104,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1391.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "ENDODONCIA"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Se extrae el nervio, se limpia, sella y restaura el diente."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.33%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 238,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1417.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "PRÓTESIS REMOVIBLE"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Alternativa estética y higiénica para pacientes que no pueden usar prótesis fijas o implantes."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 236,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1413.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "CARILLA DENTAL"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Restauración frontal para mejorar estética, cerrar espacios y rejuvenecer tu sonrisa."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 237,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1415.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "INCRUSTACIÓN DENTAL"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Restauración frontal para mejorar estética, cerrar espacios y rejuvenecer tu sonrisa."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.33%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 239,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1423.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "ALINEADORES"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Alineación dental con tecnología 3D y acetatos transparentes, sin brackets."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

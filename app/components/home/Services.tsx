@@ -1,6 +1,6 @@
 "use client";
 
-import { WordPressPage } from "@/lib/wordpress";
+import { WordPressPage, getServiceSlug } from "@/lib/wordpress";
 import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
@@ -179,6 +179,8 @@ export default function Services({ data }: ServicesProps) {
   const buttonUrl = servicesData?.buttonUrl || "/agendar-servicio";
   const infiniteServices = [...currentServices, ...currentServices];
 
+  const isEnglish = sectionTitle.toLowerCase().includes("services");
+
   return (
     <section className="bg-[#F4F7F6] overflow-hidden flex flex-col md:flex-row min-h-[500px]" id="servicios">
       {/* Left Side: Info (Static) */}
@@ -203,23 +205,30 @@ export default function Services({ data }: ServicesProps) {
       {/* Right Side: Image Gallery (Infinite Fluid Slider) */}
       <div className="md:w-3/5 overflow-hidden relative">
         <div className="flex animate-scroll hover:pause-scroll items-center gap-0 h-full">
-          {infiniteServices.map((service, index) => (
-            <div
-              key={index}
-              className="relative flex-shrink-0 w-[80vw] md:w-[320px] h-[580px] border-l-[3px] border-white first:border-l-0"
-            >
-              <Image
-                src={service.image}
-                alt={service.title}
-                fill
-                className="object-cover"
-              />
-              {/* Overlay for text */}
-              <div className="absolute inset-x-0 bottom-0 p-10 pt-32 bg-gradient-to-t from-black/40 to-transparent">
-                <h3 className="text-white text-[18px] font-bold tracking-tight uppercase">{service.title}</h3>
-              </div>
-            </div>
-          ))}
+          {infiniteServices.map((service, index) => {
+            const slug = getServiceSlug(service.title);
+            return (
+              <Link
+                key={index}
+                href={`/servicios/${slug}${isEnglish ? "?lang=en" : ""}`}
+                className="relative flex-shrink-0 w-[80vw] md:w-[320px] h-[580px] border-l-[3px] border-white first:border-l-0 group cursor-pointer overflow-hidden"
+              >
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                {/* Overlay for text */}
+                <div className="absolute inset-x-0 bottom-0 p-10 pt-32 bg-gradient-to-t from-black/60 to-transparent">
+                  <h3 className="text-white text-[18px] font-bold tracking-tight uppercase group-hover:text-[#94D4BB] transition-colors">{service.title}</h3>
+                  <div className="mt-4 flex items-center gap-2 text-[#94D4BB] font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+                    {isEnglish ? "View details" : "Ver detalles"} <span>→</span>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
 

@@ -113,14 +113,9 @@ export default function Header({ data }: HeaderProps) {
             else if (normalizedText.includes("contacto")) href = "/contacto";
             else if (normalizedText.includes("servicio")) href = "/servicios";
 
-
-            // Ensure unique refs for common items if they still fall back
-            if (!href || href === "" || href === "#") {
-                href = "/#"; // Avoid matching home path "/"
-            }
-
             return { name: name, href };
         })
+            .filter(item => item.href !== "/agendar-cita") // Remove redundant old appointment link
         : [
             { name: "Home", href: "/" },
             { name: "Quiénes Somos", href: "/quienes-somos" },

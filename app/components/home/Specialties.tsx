@@ -1,7 +1,8 @@
 "use client";
 
-import { WordPressPage } from "@/lib/wordpress";
+import { WordPressPage, getServiceSlug } from "@/lib/wordpress";
 import Image from "next/image";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 
 interface SpecialtiesProps {
@@ -111,14 +112,18 @@ export default function Specialties({ data }: SpecialtiesProps) {
                 section.blocks.forEach((groupBlock: any) => {
                     const iconImage = groupBlock.blocks?.find((b: any) => b.type === "core/image");
                     const textGroup = groupBlock.blocks?.find((b: any) => b.type === "core/group");
-                    const title = textGroup?.blocks?.find((b: any) => b.type === "core/paragraph" && b.content.length > 50 === false)?.content;
-                    const desc = textGroup?.blocks?.find((b: any) => b.type === "core/paragraph" && b.content.includes("Lorem Ipsum"))?.content;
+                    const paragraphs = textGroup?.blocks?.filter((b: any) => b.type === "core/paragraph") || [];
+                    const titleBlock = paragraphs.find((p: any) => p.content?.length > 0 && p.content.length < 50);
+                    const descBlock = paragraphs.find((p: any) => p !== titleBlock && p.content?.length > 0);
+
+                    const title = titleBlock?.content;
+                    const desc = descBlock?.content;
 
                     if (title) {
                         specialtiesGrid.push({
                             icon: iconImage?.url || "",
                             title: title,
-                            desc: desc || "Lorem Ipsum is simply dummy text of the printing and"
+                            desc: desc || ""
                         });
                     }
                 });
@@ -218,33 +223,36 @@ export default function Specialties({ data }: SpecialtiesProps) {
                 {/* Only show the button if there are more than 9 items or if expanded to show "Ver menos" */}
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-16 max-w-7xl mx-auto px-4">
-                    {displayItems.slice(0, isExpanded ? displayItems.length : 9).map((item, index) => (
-                        <div key={index} className="flex items-start gap-6 group">
-                            <div className="flex-shrink-0 bg-[#F4F4F4] p-4 rounded-full flex items-center justify-center w-24 h-24 group-hover:bg-[#E8F2F0] transition-colors duration-300 overflow-hidden">
-                                <div className="text-[#72BFA9] relative w-full h-full">
-                                    {item.icon.startsWith("<svg") ? (
-                                        <div dangerouslySetInnerHTML={{ __html: item.icon }} className="w-full h-full p-2" />
-                                    ) : (
-                                        <Image
-                                            src={item.icon}
-                                            alt={item.title}
-                                            width={60}
-                                            height={60}
-                                            className="object-contain "
-                                        />
-                                    )}
+                    {displayItems.slice(0, isExpanded ? displayItems.length : 9).map((item, index) => {
+                        const slug = getServiceSlug(item.title);
+                        return (
+                            <Link key={index} href={`/servicios/${slug}${isEnglish ? "?lang=en" : ""}`} className="flex items-start gap-6 group cursor-pointer">
+                                <div className="flex-shrink-0 bg-[#F4F4F4] p-4 rounded-full flex items-center justify-center w-24 h-24 group-hover:bg-[#E8F2F0] transition-colors duration-300 overflow-hidden">
+                                    <div className="text-[#72BFA9] relative w-full h-full group-hover:scale-110 transition-transform">
+                                        {item.icon.startsWith("<svg") ? (
+                                            <div dangerouslySetInnerHTML={{ __html: item.icon }} className="w-full h-full p-2" />
+                                        ) : (
+                                            <Image
+                                                src={item.icon}
+                                                alt={item.title}
+                                                width={60}
+                                                height={60}
+                                                className="object-contain "
+                                            />
+                                        )}
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="pt-2">
-                                <h3 className="font-bold text-[18px] text-[#4A5568] uppercase tracking-tight mb-2 leading-tight">
-                                    {item.title}
-                                </h3>
-                                <p className="text-[14px] text-gray-400 font-light leading-relaxed">
-                                    {item.desc}
-                                </p>
-                            </div>
-                        </div>
-                    ))}
+                                <div className="pt-2">
+                                    <h3 className="font-bold text-[18px] text-[#4A5568] uppercase tracking-tight mb-2 leading-tight group-hover:text-primary transition-colors">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-[14px] text-gray-400 font-light leading-relaxed">
+                                        {item.desc}
+                                    </p>
+                                </div>
+                            </Link>
+                        );
+                    })}
                 </div>
 
                 {displayItems.length > 9 && (

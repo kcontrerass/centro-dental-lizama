@@ -1,7 +1,7 @@
 "use client";
 
 import { WordPressPage } from "@/lib/wordpress";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 
 interface AppointmentFormProps {
@@ -22,6 +22,37 @@ export default function AppointmentForm({ data, language = "espanol" }: Appointm
         "appointment-date": "",
         "appointment-time": ""
     });
+
+    // Auto-select service based on page title
+    useEffect(() => {
+        if (data?.title) {
+            const pageTitle = data.title.toLowerCase().trim();
+            const normalizedPageTitle = pageTitle.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, "");
+
+            // Find match in either Spanish or English lists
+            const esOptions = translations.espanol.serviceOptions;
+            const enOptions = translations.ingles.serviceOptions;
+
+            let matchIndex = esOptions.findIndex(opt => {
+                const normalizedOpt = opt.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, "");
+                return normalizedPageTitle.includes(normalizedOpt) || normalizedOpt.includes(normalizedPageTitle);
+            });
+
+            if (matchIndex === -1) {
+                matchIndex = enOptions.findIndex(opt => {
+                    const normalizedOpt = opt.toLowerCase().trim().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, "");
+                    return normalizedPageTitle.includes(normalizedOpt) || normalizedOpt.includes(normalizedPageTitle);
+                });
+            }
+
+            if (matchIndex !== -1) {
+                setFormData(prev => ({
+                    ...prev,
+                    service: esOptions[matchIndex] // Always use Spanish value for CF7
+                }));
+            }
+        }
+    }, [data, language]);
 
     const translations = {
         espanol: {
@@ -44,7 +75,7 @@ export default function AppointmentForm({ data, language = "espanol" }: Appointm
                 "Examen Dental",
                 "Implantes Dentales",
                 "Endodoncia",
-                "Periodoncia",
+                "Periodoncia (Tratamiento de encías)",
                 "Corona Dental",
                 "Carilla Dental",
                 "Incrustación Dental",
@@ -81,7 +112,7 @@ export default function AppointmentForm({ data, language = "espanol" }: Appointm
                 "Dental Exam",
                 "Dental Implants",
                 "Endodontics",
-                "Periodontics",
+                "Periodontics (Gum Treatment)",
                 "Dental Crown",
                 "Dental Veneer",
                 "Dental Inlay",
@@ -153,21 +184,31 @@ export default function AppointmentForm({ data, language = "espanol" }: Appointm
     };
 
     if (data && data.gutenberg_structure) {
-        const columnsBlocks = data.gutenberg_structure.filter(block => block.type === "core/columns");
-        if (columnsBlocks.length >= 3) {
-            const formColumns = columnsBlocks[2];
-            if (formColumns.columns) {
-                formColumns.columns.forEach((col: any) => {
-                    const paragraph = col.blocks?.find((b: any) => b.type === "core/paragraph");
-                    if (paragraph) {
-                        title = paragraph.content || title;
-                    }
-                    const imageBlock = col.blocks?.find((b: any) => b.type === "core/image");
-                    if (imageBlock) {
-                        image = imageBlock.url || imageBlock.attributes?.url || image;
-                    }
-                });
-            }
+        // Find the columns block that likely contains the form (has "Book" or "Reserva")
+        const formColumns = data.gutenberg_structure.find(block => {
+            if (block.type !== "core/columns" || !block.columns) return false;
+            return block.columns.some((col: any) =>
+                col.blocks?.some((b: any) =>
+                    b.type === "core/paragraph" &&
+                    (b.content?.toLowerCase().includes("book") || b.content?.toLowerCase().includes("reserva"))
+                )
+            );
+        });
+
+        if (formColumns && formColumns.columns) {
+            formColumns.columns.forEach((col: any) => {
+                const paragraph = col.blocks?.find((b: any) =>
+                    b.type === "core/paragraph" &&
+                    (b.content?.toLowerCase().includes("book") || b.content?.toLowerCase().includes("reserva"))
+                );
+                if (paragraph) {
+                    title = paragraph.content || title;
+                }
+                const imageBlock = col.blocks?.find((b: any) => b.type === "core/image");
+                if (imageBlock) {
+                    image = imageBlock.url || imageBlock.attributes?.url || image;
+                }
+            });
         }
     }
     return (

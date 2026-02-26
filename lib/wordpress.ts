@@ -237,3 +237,82 @@ export async function getLocationData(language: "espanol" | "ingles" = "espanol"
         return null;
     }
 }
+export async function getServiceDetails(language: "espanol" | "ingles" = "espanol", slug: string): Promise<WordPressPage | null> {
+    const url = `${API_URL}/pages/${language}/servicios/${slug}`;
+    console.log(url);
+    console.log(`[WordPress API] Fetching service details for ${language} / ${slug} from: ${url}`);
+    try {
+        const response = await fetch(url, {
+            next: { revalidate: 0 } // Disable cache for testing
+        });
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch service details for ${slug}: ${response.statusText}`);
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error(`Error fetching service details for ${slug}:`, error);
+        return null;
+    }
+}
+
+export function getServiceSlug(title: string): string {
+    const slugMap: { [key: string]: string } = {
+        "diseno de sonrisa": "diseno-de-sonrisa",
+        "smile design": "diseno-de-sonrisa",
+        "ortodoncia": "ortodoncia",
+        "orthodontics": "ortodoncia",
+        "conventional and invisible orthodontics": "ortodoncia",
+        "examen dental": "examen-dental",
+        "dental exam": "examen-dental",
+        "odontopediatria": "odontopediatria",
+        "pediatric dentistry": "odontopediatria",
+        "odontologia ninos": "odontopediatria",
+        "periodoncia": "periodoncia-tratamiento-de-encias",
+        "periodontics": "periodoncia-tratamiento-de-encias",
+        "periodontics (gum treatment)": "periodoncia-tratamiento-de-encias",
+        "periodontics gum treatment": "periodoncia-tratamiento-de-encias",
+        "periodoncia (tratamiento de encias)": "periodoncia-tratamiento-de-encias",
+        "corona dental": "corona-dental",
+        "implantes dentales": "implantes-dentales",
+        "dental implants": "implantes-dentales",
+        "endodoncia": "endodoncia",
+        "endodontics": "endodoncia",
+        "endodontics (canal treatment)": "endodoncia",
+        "protesis removible": "protesis-removible",
+        "removable prosthesis": "protesis-removible",
+        "carilla dental": "carilla-dental",
+        "dental veneer": "carilla-dental",
+        "incrustacion dental": "incrustacion-dental",
+        "dental inlay": "incrustacion-dental",
+        "alineadores": "alineadores",
+        "aligners": "alineadores",
+        "limpieza dental": "limpieza-dental",
+        "dental cleaning": "limpieza-dental",
+        "blanqueamiento": "blanqueamiento",
+        "whitening": "blanqueamiento",
+        "teeth whitening": "blanqueamiento",
+        "rehabilitacion oral": "rehabilitacion-oral",
+        "oral rehabilitation": "rehabilitacion-oral",
+    };
+
+    // Normalize input title
+    const normalizedTitle = title
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .trim();
+
+    // Check mapping
+    if (slugMap[normalizedTitle]) return slugMap[normalizedTitle];
+
+    // Check for suffix variations (removing parentheses)
+    const baseTitle = normalizedTitle.split("(")[0].trim();
+    if (slugMap[baseTitle]) return slugMap[baseTitle];
+
+    // Fallback to simple slugification
+    return baseTitle
+        .replace(/\s+/g, "-")
+        .replace(/[^\w-]/g, "");
+}

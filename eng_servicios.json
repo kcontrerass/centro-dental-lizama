@@ -1,0 +1,1150 @@
+{
+  "id": 242,
+  "title": "Servicios",
+  "slug": "servicios",
+  "status": "publish",
+  "date": "2026-02-13 19:56:55",
+  "modified": "2026-02-13 20:03:53",
+  "link": "https://centrodentallizamabackend.aumenta.do/ingles/servicios/",
+  "gutenberg_structure": [
+    {
+      "type": "core/cover",
+      "attributes": {
+        "url": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/servicios-scaled.jpg",
+        "id": 227,
+        "dimRatio": 10,
+        "customOverlayColor": "#e3e3e6",
+        "isUserOverlayColor": false,
+        "isDark": false,
+        "sizeSlug": "full",
+        "layout": {
+          "type": "constrained"
+        }
+      },
+      "backgroundImage": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/servicios-scaled.jpg",
+      "overlayColor": "",
+      "blocks": [
+        {
+          "type": "core/paragraph",
+          "attributes": {
+            "align": "left",
+            "placeholder": "Escribe el título…",
+            "fontSize": "large"
+          },
+          "content": "Services"
+        },
+        {
+          "type": "core/paragraph",
+          "attributes": [],
+          "content": "Specialized treatments of the highest level."
+        }
+      ]
+    },
+    {
+      "type": "core/paragraph",
+      "attributes": {
+        "align": "center"
+      },
+      "content": "All our treatments are performed with love by one of our specialists to guarantee your satisfaction."
+    },
+    {
+      "type": "core/columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 96,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1434.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "smile design"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "We improve your smile with veneers, crowns, and periodontal surgery."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 232,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/limpieza.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "Orthodontics"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Dental alignment with metal, ceramic or sapphire braces, improving aesthetics and function."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.33%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 102,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1392.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "dental exam"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Lorem Ipsum is simply dummy text of the printing and"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "core/paragraph",
+      "attributes": {
+        "align": "center",
+        "fontSize": "large"
+      },
+      "content": "Learn more about our services"
+    },
+    {
+      "type": "core/columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 235,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1421.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "PEDIATRIC DENTISTRY"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Modern and safe techniques for handling children, eliminating stress and fear."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 103,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1386.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "PERIODONTICS (GUM TREATMENT)"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Deep cleaning: removes limescale, stains and strengthens enamel."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.33%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 105,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1388.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "CORONA DENTAL"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Total restoration for worn or fractured teeth, preserving them as much as possible."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "core/columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 101,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1390.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "DENTAL IMPLANTS"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "We place titanium screws and implant crowns using 3D technology for maximum precision."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 104,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1391.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "ENDODONTICS"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "The nerve is removed, the tooth is cleaned, sealed and restored."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.33%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 238,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1417.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "REMOVABLE PROSTHESIS"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "An aesthetic and hygienic alternative for patients who cannot use fixed prostheses or implants."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "core/columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 236,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1413.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "DENTAL VENEER"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Frontal restoration to improve aesthetics, close gaps and rejuvenate your smile."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 237,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1415.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "DENTAL INLAY"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Frontal restoration to improve aesthetics, close gaps and rejuvenate your smile."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.33%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 239,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1423.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "ALIGNERS"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Dental alignment with 3D technology and transparent acetates, without braces."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "core/paragraph",
+      "attributes": [],
+      "content": ""
+    }
+  ],
+  "sections": [
+    {
+      "type": "cover",
+      "attributes": {
+        "url": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/servicios-scaled.jpg",
+        "id": 227,
+        "dimRatio": 10,
+        "customOverlayColor": "#e3e3e6",
+        "isUserOverlayColor": false,
+        "isDark": false,
+        "sizeSlug": "full",
+        "layout": {
+          "type": "constrained"
+        }
+      },
+      "backgroundImage": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/servicios-scaled.jpg",
+      "overlayColor": "",
+      "blocks": [
+        {
+          "type": "core/paragraph",
+          "attributes": {
+            "align": "left",
+            "placeholder": "Escribe el título…",
+            "fontSize": "large"
+          },
+          "content": "Services"
+        },
+        {
+          "type": "core/paragraph",
+          "attributes": [],
+          "content": "Specialized treatments of the highest level."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "blocks": [
+        {
+          "type": "core/paragraph",
+          "attributes": {
+            "align": "center"
+          },
+          "content": "All our treatments are performed with love by one of our specialists to guarantee your satisfaction."
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 96,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1434.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "smile design"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "We improve your smile with veneers, crowns, and periodontal surgery."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 232,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "https://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/limpieza.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "Orthodontics"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Dental alignment with metal, ceramic or sapphire braces, improving aesthetics and function."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.33%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 102,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1392.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "dental exam"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Lorem Ipsum is simply dummy text of the printing and"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "blocks": [
+        {
+          "type": "core/paragraph",
+          "attributes": {
+            "align": "center",
+            "fontSize": "large"
+          },
+          "content": "Learn more about our services"
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 235,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1421.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "PEDIATRIC DENTISTRY"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Modern and safe techniques for handling children, eliminating stress and fear."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 103,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1386.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "PERIODONTICS (GUM TREATMENT)"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Deep cleaning: removes limescale, stains and strengthens enamel."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.33%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 105,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1388.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "CORONA DENTAL"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Total restoration for worn or fractured teeth, preserving them as much as possible."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 101,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1390.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "DENTAL IMPLANTS"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "We place titanium screws and implant crowns using 3D technology for maximum precision."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 104,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1391.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "ENDODONTICS"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "The nerve is removed, the tooth is cleaned, sealed and restored."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.33%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 238,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1417.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "REMOVABLE PROSTHESIS"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "An aesthetic and hygienic alternative for patients who cannot use fixed prostheses or implants."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "columns",
+      "attributes": [],
+      "columns": [
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 236,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1413.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "DENTAL VENEER"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Frontal restoration to improve aesthetics, close gaps and rejuvenate your smile."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.34%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 237,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1415.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "DENTAL INLAY"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Frontal restoration to improve aesthetics, close gaps and rejuvenate your smile."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "width": "33.33%",
+          "blocks": [
+            {
+              "type": "core/group",
+              "attributes": {
+                "layout": {
+                  "type": "flex",
+                  "orientation": "vertical",
+                  "justifyContent": "center"
+                }
+              },
+              "blocks": [
+                {
+                  "type": "core/image",
+                  "attributes": {
+                    "id": 239,
+                    "sizeSlug": "full",
+                    "linkDestination": "none"
+                  },
+                  "url": "http://centrodentallizamabackend.aumenta.do/wp-content/uploads/2026/02/Grupo-1423.svg",
+                  "alt": "",
+                  "caption": ""
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": [],
+                  "content": "ALIGNERS"
+                },
+                {
+                  "type": "core/paragraph",
+                  "attributes": {
+                    "align": "center"
+                  },
+                  "content": "Dental alignment with 3D technology and transparent acetates, without braces."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "blocks": [
+        {
+          "type": "core/paragraph",
+          "attributes": [],
+          "content": ""
+        }
+      ]
+    }
+  ]
+}

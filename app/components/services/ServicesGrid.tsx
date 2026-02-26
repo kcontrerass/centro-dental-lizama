@@ -1,5 +1,6 @@
-import { WordPressPage, GutenbergBlock } from "@/lib/wordpress";
+import { WordPressPage, GutenbergBlock, getServiceSlug } from "@/lib/wordpress";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ServicesGridProps {
     data: WordPressPage | null;
@@ -82,23 +83,26 @@ export default function ServicesGrid({ data }: ServicesGridProps) {
         <section className="pb-20 pt-0 px-8 bg-white">
             <div className="max-w-[1200px] mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    {services.map((service, index) => (
-                        <div key={index} className="flex flex-col items-center text-center">
-                            <div className="w-28 h-28 bg-[#F4F4F4] rounded-full flex items-center justify-center mb-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] uppercase">
-                                {service.iconUrl ? (
-                                    <Image src={service.iconUrl} alt={service.title} width={55} height={55} className="w-[55px] h-[55px] object-contain" />
-                                ) : (
-                                    (service as any).icon
-                                )}
-                            </div>
-                            <h3 className="text-[22px] font-bold text-[#70bfa8] mb-4 uppercase">
-                                {service.title}
-                            </h3>
-                            <p className="text-gray-400 text-[15px] leading-relaxed max-w-[280px] font-light">
-                                {service.description}
-                            </p>
-                        </div>
-                    ))}
+                    {services.map((service, index) => {
+                        const slug = getServiceSlug(service.title);
+                        return (
+                            <Link key={index} href={`/servicios/${slug}${data?.link?.includes("/ingles/") ? "?lang=en" : ""}`} className="flex flex-col items-center text-center group cursor-pointer">
+                                <div className="w-28 h-28 bg-[#F4F4F4] rounded-full flex items-center justify-center mb-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] uppercase group-hover:scale-105 transition-transform">
+                                    {service.iconUrl ? (
+                                        <Image src={service.iconUrl} alt={service.title} width={55} height={55} className="w-[55px] h-[55px] object-contain" />
+                                    ) : (
+                                        (service as any).icon
+                                    )}
+                                </div>
+                                <h3 className="text-[22px] font-bold text-[#70bfa8] mb-4 uppercase group-hover:text-primary transition-colors">
+                                    {service.title}
+                                </h3>
+                                <p className="text-gray-400 text-[15px] leading-relaxed max-w-[280px] font-light">
+                                    {service.description}
+                                </p>
+                            </Link>
+                        );
+                    })}
                 </div>
             </div>
         </section>
