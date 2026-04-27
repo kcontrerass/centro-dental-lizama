@@ -79,7 +79,7 @@ export default function TestimonialsCases({ data }: TestimonialsCasesProps) {
 
                             {/* Text Part - Occupies the other half */}
                             <div className={`w-full md:w-1/2 flex flex-col justify-center px-12 md:px-24 py-16 md:py-0 ${isDark ? 'bg-[#F4F7F6]' : 'bg-white'}`}>
-                                <div className="max-w-xl">
+                                <div className="">
                                     <h3
                                         className="text-[34px] md:text-[45px] font-bold text-[#70bfa8] mb-4 leading-tight"
                                         dangerouslySetInnerHTML={{ __html: titleBlock?.content || "" }}
@@ -90,7 +90,7 @@ export default function TestimonialsCases({ data }: TestimonialsCasesProps) {
                                     />
 
                                     {/* Highlights Grid */}
-                                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-1 mb-12">
                                         {highlights.map((highlight: any, idx: number) => (
                                             <div key={idx} className="flex flex-col items-center text-center ">
                                                 <div className="w-14 h-14 bg-[#EDEDED] backdrop-blur-sm shadow-sm rounded-full flex items-center justify-center mb-4 border border-gray-100 p-3">
@@ -102,7 +102,7 @@ export default function TestimonialsCases({ data }: TestimonialsCasesProps) {
                                                     />
                                                 </div>
                                                 <h4 className="text-[18px] font-bold text-[#70bfa8] mb-1 leading-tight">{highlight.title}</h4>
-                                                <p className="text-gray-400 text-[13px] leading-snug">{highlight.text}</p>
+                                                {/*<p className="text-gray-400 text-[13px] leading-snug">{highlight.text}</p>*/}
                                             </div>
                                         ))}
                                     </div>

@@ -59,19 +59,18 @@ export default function Team({ data }: TeamProps) {
 
                     {/* Right Side: Content */}
                     <div className="w-full md:w-1/2 text-left">
-                        <span className="text-gray-400 font-bold uppercase tracking-tight text-[13px] mb-2 block">{info.tag}</span>
+
                         <h2 className="text-[32px] md:text-[44px] font-bold text-gray-900 mb-4 leading-tight">
                             {info.title}
                         </h2>
-                        <p className="text-gray-400 text-[14px] mb-12 leading-relaxed">
+                        <p className="text-lg text-gray-500 mb-10 max-w-lg">
                             {info.subtitle}
                         </p>
 
+
                         <div className="space-y-4 max-w-md border-t pt-10">
                             <h4 className="font-bold text-gray-800 text-[18px]">{info.memberTitle}</h4>
-                            <p className="text-gray-400 leading-relaxed text-[13px] font-light">
-                                {info.memberDesc}
-                            </p>
+
                         </div>
                     </div>
                 </div>

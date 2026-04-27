@@ -29,6 +29,11 @@ export interface WordPressPage {
 
 const API_URL = "https://centrodentallizamabackend.aumenta.do/wp-json/gutenberg-api/v1";
 
+const BACKEND_SLUG_MAP: { [key: string]: string } = {
+    "rehabilitacion-oral": "carilla-dental",
+    "odontologia-restaurativa": "carilla-dental",
+};
+
 export async function getHomeData(language: "espanol" | "ingles" = "espanol"): Promise<WordPressPage | null> {
     const url = `${API_URL}/pages/${language}/inicio`;
     console.log(`[WordPress API] Fetching home data for ${language} from: ${url}`);
@@ -238,16 +243,18 @@ export async function getLocationData(language: "espanol" | "ingles" = "espanol"
     }
 }
 export async function getServiceDetails(language: "espanol" | "ingles" = "espanol", slug: string): Promise<WordPressPage | null> {
-    const url = `${API_URL}/pages/${language}/servicios/${slug}`;
+    const backendSlug = BACKEND_SLUG_MAP[slug] || slug;
+    const url = `${API_URL}/pages/${language}/servicios/${backendSlug}`;
     console.log(url);
-    console.log(`[WordPress API] Fetching service details for ${language} / ${slug} from: ${url}`);
+    console.log(`[WordPress API] Fetching service details for ${language} / ${backendSlug} from: ${url}`);
     try {
         const response = await fetch(url, {
             next: { revalidate: 0 } // Disable cache for testing
         });
 
         if (!response.ok) {
-            throw new Error(`Failed to fetch service details for ${slug}: ${response.statusText}`);
+            console.error(`[WordPress API] Failed to fetch service details for ${slug}: ${response.statusText}`);
+            return null;
         }
 
         return await response.json();
@@ -293,8 +300,10 @@ export function getServiceSlug(title: string): string {
         "blanqueamiento": "blanqueamiento",
         "whitening": "blanqueamiento",
         "teeth whitening": "blanqueamiento",
-        "rehabilitacion oral": "rehabilitacion-oral",
-        "oral rehabilitation": "rehabilitacion-oral",
+        "rehabilitacion oral": "carilla-dental",
+        "oral rehabilitation": "carilla-dental",
+        "odontologia restaurativa": "carilla-dental",
+        "restorative dentistry": "carilla-dental",
     };
 
     // Normalize input title

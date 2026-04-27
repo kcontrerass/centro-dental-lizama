@@ -9,10 +9,10 @@ interface AppointmentHeroProps {
 }
 
 export default function AppointmentHero({ data }: AppointmentHeroProps) {
-    let title = "Limpieza dental";
-    let subtitle = "Todo comienza con una limpieza dental y evaluación completa";
-    let backgroundImage = "/servicios.png";
-    let buttonText = "Reservar cita";
+    let title = data?.title || "";
+    let subtitle = "";
+    let backgroundImage = "";
+    let buttonText = "";
     let buttonUrl = "";
 
     if (data && data.gutenberg_structure) {
@@ -39,6 +39,8 @@ export default function AppointmentHero({ data }: AppointmentHeroProps) {
         }
     }
 
+    if (!title && !backgroundImage) return null;
+
     const handleButtonClick = (e: React.MouseEvent) => {
         const targetId = (buttonUrl && buttonUrl.startsWith('#')) ? buttonUrl.substring(1) : 'reserva';
         const element = document.getElementById(targetId);
@@ -55,39 +57,47 @@ export default function AppointmentHero({ data }: AppointmentHeroProps) {
 
     return (
         <section className="relative w-full h-[350px] md:h-[600px] overflow-hidden">
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src={backgroundImage}
-                    alt={title}
-                    fill
-                    className="object-cover object-center"
-                    priority
-                />
-            </div>
+            {backgroundImage && (
+                <div className="absolute inset-0 z-0">
+                    <Image
+                        src={backgroundImage}
+                        alt={title}
+                        fill
+                        className="object-cover object-center"
+                        priority
+                    />
+                </div>
+            )}
 
             <div className="relative z-10 max-w-[1400px] mx-auto h-full flex items-center">
                 <div className="w-full md:w-1/2 px-8 md:pl-20 mt-12 md:mt-0">
                     <div className="max-w-xl">
-                        <h1 className="text-[42px] md:text-[60px] font-bold text-[#70bfa8] leading-tight mb-2 uppercase">
-                            {title}
-                        </h1>
-                        <p className="text-[18px] md:text-[22px] text-[#70bfa8] font-medium leading-relaxed mb-8 max-w-[400px]">
-                            {subtitle}
-                        </p>
-                        {buttonUrl && !buttonUrl.startsWith('#') ? (
-                            <Link
-                                href={buttonUrl}
-                                className="inline-block bg-[#70bfa8] text-white px-10 py-4 rounded-full font-bold text-[16px] hover:bg-[#5da691] transition-colors"
-                            >
-                                {buttonText}
-                            </Link>
-                        ) : (
-                            <button
-                                onClick={handleButtonClick}
-                                className="bg-[#70bfa8] text-white px-10 py-4 rounded-full font-bold text-[16px] hover:bg-[#5da691] transition-colors"
-                            >
-                                {buttonText}
-                            </button>
+                        {title && (
+                            <h1 className="text-[42px] md:text-[60px] font-bold text-[#70bfa8] leading-tight mb-2 uppercase">
+                                {title}
+                            </h1>
+                        )}
+                        {subtitle && (
+                            <p className="text-[18px] md:text-[22px] text-[#70bfa8] font-medium leading-relaxed mb-8 max-w-[400px]">
+                                {subtitle}
+                            </p>
+                        )}
+                        {buttonText && (
+                            buttonUrl && !buttonUrl.startsWith('#') ? (
+                                <Link
+                                    href={buttonUrl}
+                                    className="inline-block bg-[#70bfa8] text-white px-10 py-4 rounded-full font-bold text-[16px] hover:bg-[#5da691] transition-colors"
+                                >
+                                    {buttonText}
+                                </Link>
+                            ) : (
+                                <button
+                                    onClick={handleButtonClick}
+                                    className="bg-[#70bfa8] text-white px-10 py-4 rounded-full font-bold text-[16px] hover:bg-[#5da691] transition-colors"
+                                >
+                                    {buttonText}
+                                </button>
+                            )
                         )}
                     </div>
                 </div>

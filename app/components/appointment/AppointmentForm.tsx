@@ -67,7 +67,7 @@ export default function AppointmentForm({ data, language = "espanol" }: Appointm
             success: "¡Cita reservada con éxito!",
             error: "Hubo un error al reservar tu cita. Por favor, inténtalo de nuevo.",
             sending: "Enviando...",
-            dentistOptions: ["Dr. López", "Dr. García", "Dr. Martínez"],
+            dentistOptions: ["Dr. Mynor Lizama Lombardi"],
             serviceOptions: [
                 "Diseño de Sonrisa",
                 "Ortodoncia",
@@ -104,7 +104,7 @@ export default function AppointmentForm({ data, language = "espanol" }: Appointm
             success: "Appointment booked successfully!",
             error: "There was an error booking your appointment. Please try again.",
             sending: "Sending...",
-            dentistOptions: ["Dr. López", "Dr. García", "Dr. Martínez"],
+            dentistOptions: ["Dr. Mynor Lizama Lombardi"],
             serviceOptions: [
                 "Smile Design",
                 "Orthodontics",

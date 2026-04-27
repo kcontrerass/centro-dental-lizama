@@ -15,15 +15,15 @@ export default function AboutTeamSlider({ data }: AboutTeamSliderProps) {
     const [currentSlide, setCurrentSlide] = useState(0);
 
     let sectionTitle = lang === "en" ? "Meet our team" : "Conoce a nuestro equipo";
-    let sectionSubtitle = lang === "en" ? "Lorem Ipsum" : "Lorem Ipsum";
-    let sectionDescription = lang === "en" ? "Lorem Ipsum is simply dummy text of the printing" : "Lorem Ipsum es simplemente texto de relleno";
+    let sectionSubtitle = lang === "en" ? "" : "";
+    let sectionDescription = lang === "en" ? "" : "";
 
     let slides = [
         {
             role: lang === "en" ? "Dr. Ricardo Alvarado" : "Dra. Ricardo Alvarado",
             testimonial: lang === "en"
-                ? "Sed risus pretium quam vulputate dignissim suspendisse in est. Nibh venenatis cras sed felis eget velit aliquet sagittis. Neque aliquam vestibulum morbi blandit cursus risus at ultrices. Nibh sed pulvinar proin gravida."
-                : "Sed risus pretium quam vulputate dignissim suspendisse in est. Nibh venenatis cras sed felis eget velit aliquet sagittis. Neque aliquam vestibulum morbi blandit cursus risus at ultrices. Nibh sed pulvinar proin gravida.",
+                ? "Soy odontólogo egresado de la Pontificia Universidad Católica Madre y Maestra (PUCMM), con 18 años de experiencia en el área de la salud oral. He realizado múltiples cursos de actualización profesional, tanto en República Dominicana como en el extranjero, para mantenerme al día con los últimos avances en odontología. Mi objetivo principal es ofrecer a mis pacientes una atención odontológica de alta calidad, personalizada y con un enfoque integral, abarcando desde la prevención hasta el tratamiento de casos complejos. Me esfuerzo por crear un ambiente de confianza y comodidad, donde cada paciente reciba el mejor cuidado posible para lograr una sonrisa saludable y radiante."
+                : "Soy odontólogo egresado de la Pontificia Universidad Católica Madre y Maestra (PUCMM), con 18 años de experiencia en el área de la salud oral. He realizado múltiples cursos de actualización profesional, tanto en República Dominicana como en el extranjero, para mantenerme al día con los últimos avances en odontología. Mi objetivo principal es ofrecer a mis pacientes una atención odontológica de alta calidad, personalizada y con un enfoque integral, abarcando desde la prevención hasta el tratamiento de casos complejos. Me esfuerzo por crear un ambiente de confianza y comodidad, donde cada paciente reciba el mejor cuidado posible para lograr una sonrisa saludable y radiante.",
             image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964&auto=format&fit=crop",
             testimonialLabel: lang === "en" ? "Testimonial" : "Testimonial"
         }
@@ -71,9 +71,7 @@ export default function AboutTeamSlider({ data }: AboutTeamSliderProps) {
                         <div className="mb-10">
                             <div className="text-[14px] font-bold text-[#70bfa8] uppercase tracking-wider mb-2 block" dangerouslySetInnerHTML={{ __html: sectionSubtitle }} />
                             <h2 className="text-[42px] font-extrabold text-[#70bfa8] leading-tight mb-4" dangerouslySetInnerHTML={{ __html: sectionTitle }} />
-                            <p className="text-[18px] text-gray-400 font-medium">
-                                {sectionDescription}
-                            </p>
+
                         </div>
 
                         <div className="mt-12">

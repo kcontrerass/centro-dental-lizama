@@ -95,7 +95,7 @@ export default function BlogList({ posts = [], introText = "" }: BlogListProps) 
 
                                             {/* Category Pill Button */}
                                             <Link href={`/blog/${slug}`} className={`px-5 py-3 bg-[#70bfa8] rounded-full font-bold text-[14px] transition-all hover:brightness-105 self-start md:self-center shadow-md  text-white uppercase`}>
-                                                Lorem Ipsum
+                                                Leer más
                                             </Link>
                                         </div>
 
