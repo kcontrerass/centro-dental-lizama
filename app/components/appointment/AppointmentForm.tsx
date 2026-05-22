@@ -80,7 +80,8 @@ export default function AppointmentForm({ data, language = "espanol" }: Appointm
                 "Carilla Dental",
                 "Incrustación Dental",
                 "Prótesis Removible",
-                "Odontopediatría"
+                "Odontopediatría",
+                "Limpieza Dental"
             ],
             timeOptions: [
                 "08:00 AM",
@@ -117,7 +118,8 @@ export default function AppointmentForm({ data, language = "espanol" }: Appointm
                 "Dental Veneer",
                 "Dental Inlay",
                 "Removable Denture",
-                "Pediatric Dentistry"
+                "Pediatric Dentistry",
+                "Dental Cleaning"
             ],
             timeOptions: [
                 "08:00 AM",
